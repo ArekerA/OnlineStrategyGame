@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineStrategyGame.Database.MSSQL\OnlineStrategyGame.Database.MSSQL.csproj" />
+    <ProjectReference Include="..\OnlineStrategyGame.Localisation\OnlineStrategyGame.Localisation.csproj" />
   </ItemGroup>
 
 </Project>
