@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OnlineStrategyGame.WebApp.ControllersUtilities;
 using OnlineStrategyGame.WebApp.Models;
 
 namespace OnlineStrategyGame.WebApp.Controllers
@@ -23,17 +24,20 @@ namespace OnlineStrategyGame.WebApp.Controllers
 
         public IActionResult Index()
         {
+            this.SetLanguageUsingCookie();
             return View();
         }
 
         public IActionResult Privacy()
         {
+            this.SetLanguageUsingCookie();
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            this.SetLanguageUsingCookie();
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
@@ -51,7 +55,6 @@ namespace OnlineStrategyGame.WebApp.Controllers
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
             new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
-            Localisation.Localisation.Culture = new System.Globalization.CultureInfo(culture);
 
             return LocalRedirect(returnUrl);
         }

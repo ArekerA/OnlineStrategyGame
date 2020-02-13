@@ -41,7 +41,6 @@ namespace OnlineStrategyGame.WebApp
                     new CookieRequestCultureProvider()
                 };
             });
-            Localisation.Localisation.Culture = new System.Globalization.CultureInfo("en-US");
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
