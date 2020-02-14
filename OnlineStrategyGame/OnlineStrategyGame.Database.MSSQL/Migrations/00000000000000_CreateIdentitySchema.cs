@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace OnlineStrategyGame.Database.MSSQL.Data.Migrations
+namespace OnlineStrategyGame.Database.MSSQL.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

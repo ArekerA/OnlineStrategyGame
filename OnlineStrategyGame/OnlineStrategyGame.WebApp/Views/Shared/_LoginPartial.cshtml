@@ -1,7 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using OnlineStrategyGame.Localisation
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using OnlineStrategyGame.Database.MSSQL.Models;
+@inject SignInManager<AppIdentityUser> SignInManager
+@inject UserManager<AppIdentityUser> UserManager
 
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
