@@ -16,7 +16,6 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public Star Star { get; set; }
         public int StarId { get; set; }
         public List<Planet> Planets { get; set; }
-        public int SolarSystemId { get; set; }
         public int CordX { get; set; }
         public int CordY { get; set; }
         public int CordZ { get; set; }

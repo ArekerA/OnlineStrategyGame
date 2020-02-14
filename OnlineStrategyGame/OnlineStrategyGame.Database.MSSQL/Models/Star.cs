@@ -14,5 +14,6 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public float Radius { get; set; }
         public float GravitationalAcceleration { get; set; }
         public float Temperature { get; set; }
+        public SolarSystem SolarSystem { get; set; }
     }
 }
