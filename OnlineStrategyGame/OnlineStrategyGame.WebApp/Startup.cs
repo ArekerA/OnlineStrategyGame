@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
@@ -5,8 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OnlineStrategyGame.Base.Galaxy;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Database.MSSQL.Models;
+using OnlineStrategyGame.Dtos;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -40,7 +43,14 @@ namespace OnlineStrategyGame.WebApp
                     new CookieRequestCultureProvider()
                 };
             });
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new AutoMapping());
+            });
 
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddScoped<ISolarSystemManager, SolarSystemManager>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
