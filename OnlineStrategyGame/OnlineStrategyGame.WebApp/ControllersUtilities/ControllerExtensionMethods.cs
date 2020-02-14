@@ -18,7 +18,7 @@ namespace OnlineStrategyGame.WebApp.ControllersUtilities
             if (controller.Request.Cookies[CookieRequestCultureProvider.DefaultCookieName] != null)
             {
                 var x = CookieRequestCultureProvider.ParseCookieValue(controller.Request.Cookies[CookieRequestCultureProvider.DefaultCookieName]);
-                if (x.Cultures.Count() > 0)
+                if (x.Cultures.Any())
                 {
                     var y = x.Cultures[0];
                     Localisation.Localisation.Culture = new System.Globalization.CultureInfo(y.ToString());

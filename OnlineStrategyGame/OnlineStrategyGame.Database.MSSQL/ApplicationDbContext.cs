@@ -9,9 +9,19 @@ namespace OnlineStrategyGame.Database.MSSQL
 {
     public class ApplicationDbContext : IdentityDbContext<AppIdentityUser>
     {
+        public DbSet<Planet> Planets { get; set; }
+        public DbSet<Star> Stars { get; set; }
+        public DbSet<SolarSystem> SolarSystems { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<SolarSystem>()
+                .HasIndex(p => new { p.CordX, p.CordY, p.CordZ });
         }
     }
 }
