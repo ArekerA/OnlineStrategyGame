@@ -1,9 +1,48 @@
-﻿@model OnlineStrategyGame.WebApp.Models.RaceCreatorViewModel
+﻿@using OnlineStrategyGame.Dtos.RaceCreator.Enums
+@model OnlineStrategyGame.WebApp.Models.RaceCreatorViewModel
 
 @{
     ViewData["Title"] = "RaceCreatorView";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>End</h1>
+<h1>Summary</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h2>Summary</h2>
+            @foreach (var item in Model.Bonuses)
+            {
+                if ((item.Key & (RaceCreatorBonusType.MilitaryDefensive | RaceCreatorBonusType.MilitaryOffensive)) > 0)
+                {
+                    <p class="red">@item.Key.ToString() : @item.Value</p>
+                }
+                else if (item.Key == RaceCreatorBonusType.Economy)
+                {
+                    <p class="yellow">@item.Key.ToString() : @item.Value</p>
+                }
+                else if (item.Key == RaceCreatorBonusType.Research)
+                {
+                    <p class="blue">@item.Key.ToString() : @item.Value</p>
+                }
+                else
+                {
+                    <p>@item.Key.ToString() : @item.Value</p>
+                }
 
+            }
+        </div>
+        <div class="col-9">
+            <p>
+                @foreach (var item in Model.Selected)
+                {
+                    <span>@item.Name -> </span>
+                }
+            </p>
+            @foreach (var item in Model.Selected)
+            {
+                <p>@item.Id</p>
+            }
+        </div>
+    </div>
+</div>

@@ -28,12 +28,25 @@ namespace OnlineStrategyGame.WebApp.Controllers
             return View(result);
         }
 
-        public async Task<IActionResult> Select(int id)
+        [HttpPost]
+        public async Task<IActionResult> Select(int id, int[] selected)
         {
             var elements = _raceCreatorManager.GetElements(id);
-            if (elements == null)
-                return View(nameof(End));
             var result = new RaceCreatorViewModel();
+            result.SelectedIds.Add(id);
+            result.SelectedIds.AddRange(selected);
+            foreach (var item in result.SelectedIds)
+            {
+                result.Selected.Add(_raceCreatorManager.GetElement(item));
+
+            }
+            result.Selected.Sort(delegate (RaceCreatorElementDto x, RaceCreatorElementDto y)
+            {
+                return x.Id.CompareTo(y.Id);
+            });
+            result.Bonuses = _raceCreatorManager.GetSummaryBonuses(result.Selected);
+            if (elements == null)
+                return View(nameof(End), result);
             result.Elements.AddRange(elements);
             return View(nameof(Index), result);
         }

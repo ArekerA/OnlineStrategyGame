@@ -1,36 +1,73 @@
-﻿@model OnlineStrategyGame.WebApp.Models.RaceCreatorViewModel
+﻿@using OnlineStrategyGame.Dtos.RaceCreator.Enums
+@model OnlineStrategyGame.WebApp.Models.RaceCreatorViewModel
 
 @{
     ViewData["Title"] = "RaceCreatorView";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h1>RaceCreatorView</h1>
+<h1>RaceCreatorView</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h2>Summary</h2>
+            @foreach (var item in Model.Bonuses)
+            {
+                if ((item.Key & (RaceCreatorBonusType.MilitaryDefensive | RaceCreatorBonusType.MilitaryOffensive)) > 0)
+                {
+                    <p class="red">@item.Key.ToString() : @item.Value</p>
+                }
+                else if (item.Key == RaceCreatorBonusType.Economy)
+                {
+                    <p class="yellow">@item.Key.ToString() : @item.Value</p>
+                }
+                else if (item.Key == RaceCreatorBonusType.Research)
+                {
+                    <p class="blue">@item.Key.ToString() : @item.Value</p>
+                }
+                else
+                {
+                    <p>@item.Key.ToString() : @item.Value</p>
+                }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HeaderName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeaderDescription)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Elements) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            <td>
-                <a asp-action="Select" asp-route-id="@item.Id">Select</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            }
+        </div>
+        <div class="col-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HeaderName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HeaderDescription)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Elements)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Description
+                            <td>
+                                <form asp-controller="RaceCreator" asp-action="Select" method="post" class="form-horizontal">
+                                    <input type="hidden" value="@item.Id" name="id" />
+                                    @foreach (var selected in Model.SelectedIds)
+                                    {
+                                        <input type="hidden" value="@selected" name="selected" />
+                                    }
+                                    <button type="submit" class="btn btn-primary" name="provider" value="Select" title="Select">Select</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
