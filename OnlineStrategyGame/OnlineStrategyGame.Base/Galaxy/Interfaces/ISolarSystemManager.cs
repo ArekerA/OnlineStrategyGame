@@ -1,6 +1,6 @@
 ﻿using OnlineStrategyGame.Dtos.Galaxy;
 
-namespace OnlineStrategyGame.Base.Galaxy
+namespace OnlineStrategyGame.Base.Galaxy.Interfaces
 {
     public interface ISolarSystemManager
     {

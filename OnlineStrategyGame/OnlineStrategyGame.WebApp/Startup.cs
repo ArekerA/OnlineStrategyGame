@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineStrategyGame.Base.Galaxy;
+using OnlineStrategyGame.Base.Galaxy.Interfaces;
+using OnlineStrategyGame.Base.RaceCreator;
+using OnlineStrategyGame.Base.RaceCreator.Interfaces;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Database.MSSQL.Models;
 using OnlineStrategyGame.Dtos;
@@ -51,6 +54,7 @@ namespace OnlineStrategyGame.WebApp
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
             services.AddScoped<ISolarSystemManager, SolarSystemManager>();
+            services.AddScoped<IRaceCreatorManager, RaceCreatorManager>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

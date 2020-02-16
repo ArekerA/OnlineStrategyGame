@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OnlineStrategyGame.Base.Galaxy.Interfaces;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Database.MSSQL.Models;
 using OnlineStrategyGame.Dtos.Galaxy;
