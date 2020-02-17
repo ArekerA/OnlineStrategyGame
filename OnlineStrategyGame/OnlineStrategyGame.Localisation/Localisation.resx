@@ -103,4 +103,112 @@
   <data name="Main_Login" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="RaceCreator_Lizardman_Name" xml:space="preserve">
+    <value>Lizardmans</value>
+  </data>
+  <data name="RaceCreator_Lizardman_Description" xml:space="preserve">
+    <value>The history of Lizardmen is full of wars.</value>
+  </data>
+  <data name="RaceCreator_Human_Name" xml:space="preserve">
+    <value>Huma</value>
+  </data>
+  <data name="RaceCreator_Human_Description" xml:space="preserve">
+    <value>People have always sought to improve their lives. They fought wars not for glory, but for influence and resources.</value>
+  </data>
+  <data name="RaceCreator_Fanaticism_Name" xml:space="preserve">
+    <value>Fanaticism</value>
+  </data>
+  <data name="RaceCreator_Fanaticism_Description" xml:space="preserve">
+    <value>War drives development.</value>
+  </data>
+  <data name="RaceCreator_Military_Name" xml:space="preserve">
+    <value>Military</value>
+  </data>
+  <data name="RaceCreator_Military_Description" xml:space="preserve">
+    <value>A strong army allows you to protect your own territory against invasion, as well as to expand your influence.</value>
+  </data>
+  <data name="RaceCreator_Creativity_Name" xml:space="preserve">
+    <value>Creativity</value>
+  </data>
+  <data name="RaceCreator_Creativity_Description" xml:space="preserve">
+    <value>Inventing new ways of development.</value>
+  </data>
+  <data name="RaceCreator_Trade_Name" xml:space="preserve">
+    <value>Trade</value>
+  </data>
+  <data name="RaceCreator_Trade_Description" xml:space="preserve">
+    <value>The exchange of goods has accelerated development.</value>
+  </data>
+  <data name="RaceCreator_Extermination_Name" xml:space="preserve">
+    <value>Extermination</value>
+  </data>
+  <data name="RaceCreator_Extermination_Description" xml:space="preserve">
+    <value>Continuous wars led to the destruction of the planet.</value>
+  </data>
+  <data name="RaceCreator_SignalFromSpace_Name" xml:space="preserve">
+    <value>Signal from space</value>
+  </data>
+  <data name="RaceCreator_SignalFromSpace_Description" xml:space="preserve">
+    <value>A mysterious signal from space suggesting the presence of another civilization led to unification. Fear of a common enemy unites.</value>
+  </data>
+  <data name="RaceCreator_Exploration_Name" xml:space="preserve">
+    <value>Exploration</value>
+  </data>
+  <data name="RaceCreator_Exploration_Description" xml:space="preserve">
+    <value>Willingness to discover what is unexplored.</value>
+  </data>
+  <data name="RaceCreator_Corporation_Name" xml:space="preserve">
+    <value>Corporation</value>
+  </data>
+  <data name="RaceCreator_Corporation_Description" xml:space="preserve">
+    <value>To gain even more, corporations went into space.</value>
+  </data>
+  <data name="RaceCreator_ArmsRace_Name" xml:space="preserve">
+    <value>Arms race</value>
+  </data>
+  <data name="RaceCreator_ArmsRace_Description" xml:space="preserve">
+    <value>The status quo led to an arms race and a demonstration of power.</value>
+  </data>
+  <data name="RaceCreator_InformationWepon_Name" xml:space="preserve">
+    <value>Information wepon</value>
+  </data>
+  <data name="RaceCreator_InformationWepon_Description" xml:space="preserve">
+    <value>Obtaining information about an opponent allows to predict enemy moves, but this required opening the borders and playing mistaken games.</value>
+  </data>
+  <data name="RaceCreator_Research" xml:space="preserve">
+    <value>Research</value>
+  </data>
+  <data name="RaceCreator_MilitaryOffensive" xml:space="preserve">
+    <value>Military offensive</value>
+  </data>
+  <data name="RaceCreator_MilitaryDefensive" xml:space="preserve">
+    <value>Military defensive</value>
+  </data>
+  <data name="RaceCreator_Economy" xml:space="preserve">
+    <value>Economy</value>
+  </data>
+  <data name="RaceCreator_MilitaryTechnology" xml:space="preserve">
+    <value>Military technology</value>
+  </data>
+  <data name="RaceCreator_ExplorationTechnology" xml:space="preserve">
+    <value>Exploration technology</value>
+  </data>
+  <data name="RaceCreator_EspionageTechnology" xml:space="preserve">
+    <value>Espionage technology</value>
+  </data>
+  <data name="RaceCreator_ExtendedPlanet" xml:space="preserve">
+    <value>Extended planet</value>
+  </data>
+  <data name="RaceCreator_Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="RaceCreator_Title" xml:space="preserve">
+    <value>Race creator</value>
+  </data>
+  <data name="RaceCreator_TableName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RaceCreator_TableDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
 </root>

@@ -1,5 +1,6 @@
 ﻿using OnlineStrategyGame.Dtos.RaceCreator;
 using OnlineStrategyGame.Dtos.RaceCreator.Enums;
+using OnlineStrategyGame.Localisation;
 using System.Collections.Generic;
 
 namespace OnlineStrategyGame.Base.RaceCreator
@@ -24,8 +25,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element11 = new RaceCreatorElementDto()
             {
                 Id = 11,
-                Name = "Jaszczuroludzie",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Lizardman_Name,
+                Description = Localisation.Localisation.RaceCreator_Lizardman_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -43,8 +44,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element12 = new RaceCreatorElementDto()
             {
                 Id = 12,
-                Name = "Ludzie",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Human_Name,
+                Description = Localisation.Localisation.RaceCreator_Human_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -57,8 +58,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element21 = new RaceCreatorElementDto()
             {
                 Id = 21,
-                Name = "Fanatyzm",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Fanaticism_Name,
+                Description = Localisation.Localisation.RaceCreator_Fanaticism_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -71,8 +72,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element22 = new RaceCreatorElementDto()
             {
                 Id = 22,
-                Name = "Wojskowość",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Military_Name,
+                Description = Localisation.Localisation.RaceCreator_Military_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -95,8 +96,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element23 = new RaceCreatorElementDto()
             {
                 Id = 23,
-                Name = "Kreatywność",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Creativity_Name,
+                Description = Localisation.Localisation.RaceCreator_Creativity_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -109,8 +110,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element24 = new RaceCreatorElementDto()
             {
                 Id = 24,
-                Name = "Handel",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Trade_Name,
+                Description = Localisation.Localisation.RaceCreator_Trade_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -123,8 +124,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element31 = new RaceCreatorElementDto()
             {
                 Id = 31,
-                Name = "Wyniszczenie",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Extermination_Name,
+                Description = Localisation.Localisation.RaceCreator_Extermination_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -152,8 +153,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element32 = new RaceCreatorElementDto()
             {
                 Id = 32,
-                Name = "Sygnał z kosmosu",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_SignalFromSpace_Name,
+                Description = Localisation.Localisation.RaceCreator_SignalFromSpace_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -166,8 +167,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element33 = new RaceCreatorElementDto()
             {
                 Id = 33,
-                Name = "Eksploracja",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Exploration_Name,
+                Description = Localisation.Localisation.RaceCreator_Exploration_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -190,8 +191,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element34 = new RaceCreatorElementDto()
             {
                 Id = 34,
-                Name = "Korporacje",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_Corporation_Name,
+                Description = Localisation.Localisation.RaceCreator_Corporation_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -209,8 +210,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element35 = new RaceCreatorElementDto()
             {
                 Id = 35,
-                Name = "Wyścig zbrojeń",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_ArmsRace_Name,
+                Description = Localisation.Localisation.RaceCreator_ArmsRace_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()
@@ -238,8 +239,8 @@ namespace OnlineStrategyGame.Base.RaceCreator
             var element36 = new RaceCreatorElementDto()
             {
                 Id = 36,
-                Name = "Informacja bronią",
-                Description = "",
+                Name = Localisation.Localisation.RaceCreator_InformationWepon_Name,
+                Description = Localisation.Localisation.RaceCreator_InformationWepon_Description,
                 Bonuses = new List<RaceCreatorBonusElementDto>()
                 {
                     new RaceCreatorBonusElementDto()

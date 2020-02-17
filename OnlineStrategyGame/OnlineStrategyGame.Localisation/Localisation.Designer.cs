@@ -77,5 +77,329 @@ namespace OnlineStrategyGame.Localisation {
                 return ResourceManager.GetString("Main_Welcome", resourceCulture);
             }
         }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The status quo led to an arms race and a demonstration of power..
+        /// </summary>
+        public static string RaceCreator_ArmsRace_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_ArmsRace_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Arms race.
+        /// </summary>
+        public static string RaceCreator_ArmsRace_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_ArmsRace_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu To gain even more, corporations went into space..
+        /// </summary>
+        public static string RaceCreator_Corporation_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Corporation_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Corporation.
+        /// </summary>
+        public static string RaceCreator_Corporation_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Corporation_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Inventing new ways of development..
+        /// </summary>
+        public static string RaceCreator_Creativity_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Creativity_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Creativity.
+        /// </summary>
+        public static string RaceCreator_Creativity_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Creativity_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Economy.
+        /// </summary>
+        public static string RaceCreator_Economy {
+            get {
+                return ResourceManager.GetString("RaceCreator_Economy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Espionage technology.
+        /// </summary>
+        public static string RaceCreator_EspionageTechnology {
+            get {
+                return ResourceManager.GetString("RaceCreator_EspionageTechnology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Willingness to discover what is unexplored..
+        /// </summary>
+        public static string RaceCreator_Exploration_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Exploration_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Exploration.
+        /// </summary>
+        public static string RaceCreator_Exploration_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Exploration_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Exploration technology.
+        /// </summary>
+        public static string RaceCreator_ExplorationTechnology {
+            get {
+                return ResourceManager.GetString("RaceCreator_ExplorationTechnology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Extended planet.
+        /// </summary>
+        public static string RaceCreator_ExtendedPlanet {
+            get {
+                return ResourceManager.GetString("RaceCreator_ExtendedPlanet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Continuous wars led to the destruction of the planet..
+        /// </summary>
+        public static string RaceCreator_Extermination_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Extermination_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Extermination.
+        /// </summary>
+        public static string RaceCreator_Extermination_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Extermination_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu War drives development..
+        /// </summary>
+        public static string RaceCreator_Fanaticism_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Fanaticism_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fanaticism.
+        /// </summary>
+        public static string RaceCreator_Fanaticism_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Fanaticism_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu People have always sought to improve their lives. They fought wars not for glory, but for influence and resources..
+        /// </summary>
+        public static string RaceCreator_Human_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Human_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Huma.
+        /// </summary>
+        public static string RaceCreator_Human_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Human_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Obtaining information about an opponent allows to predict enemy moves, but this required opening the borders and playing mistaken games..
+        /// </summary>
+        public static string RaceCreator_InformationWepon_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_InformationWepon_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Information wepon.
+        /// </summary>
+        public static string RaceCreator_InformationWepon_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_InformationWepon_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The history of Lizardmen is full of wars..
+        /// </summary>
+        public static string RaceCreator_Lizardman_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Lizardman_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Lizardmans.
+        /// </summary>
+        public static string RaceCreator_Lizardman_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Lizardman_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu A strong army allows you to protect your own territory against invasion, as well as to expand your influence..
+        /// </summary>
+        public static string RaceCreator_Military_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Military_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Military.
+        /// </summary>
+        public static string RaceCreator_Military_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Military_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Military defensive.
+        /// </summary>
+        public static string RaceCreator_MilitaryDefensive {
+            get {
+                return ResourceManager.GetString("RaceCreator_MilitaryDefensive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Military offensive.
+        /// </summary>
+        public static string RaceCreator_MilitaryOffensive {
+            get {
+                return ResourceManager.GetString("RaceCreator_MilitaryOffensive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Military technology.
+        /// </summary>
+        public static string RaceCreator_MilitaryTechnology {
+            get {
+                return ResourceManager.GetString("RaceCreator_MilitaryTechnology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Research.
+        /// </summary>
+        public static string RaceCreator_Research {
+            get {
+                return ResourceManager.GetString("RaceCreator_Research", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu A mysterious signal from space suggesting the presence of another civilization led to unification. Fear of a common enemy unites..
+        /// </summary>
+        public static string RaceCreator_SignalFromSpace_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_SignalFromSpace_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Signal from space.
+        /// </summary>
+        public static string RaceCreator_SignalFromSpace_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_SignalFromSpace_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Summary.
+        /// </summary>
+        public static string RaceCreator_Summary {
+            get {
+                return ResourceManager.GetString("RaceCreator_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Description.
+        /// </summary>
+        public static string RaceCreator_TableDescription {
+            get {
+                return ResourceManager.GetString("RaceCreator_TableDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name.
+        /// </summary>
+        public static string RaceCreator_TableName {
+            get {
+                return ResourceManager.GetString("RaceCreator_TableName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Race creator.
+        /// </summary>
+        public static string RaceCreator_Title {
+            get {
+                return ResourceManager.GetString("RaceCreator_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The exchange of goods has accelerated development..
+        /// </summary>
+        public static string RaceCreator_Trade_Description {
+            get {
+                return ResourceManager.GetString("RaceCreator_Trade_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Trade.
+        /// </summary>
+        public static string RaceCreator_Trade_Name {
+            get {
+                return ResourceManager.GetString("RaceCreator_Trade_Name", resourceCulture);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@using OnlineStrategyGame.Dtos.RaceCreator.Enums
+@using OnlineStrategyGame.Localisation
 @model OnlineStrategyGame.WebApp.Models.RaceCreatorViewModel
 
 @{
@@ -6,28 +7,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>RaceCreatorView</h1>
+    <h1>@Localisation.RaceCreator_Title</h1>
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <h2>Summary</h2>
+            <h2>@Localisation.RaceCreator_Summary</h2>
             @foreach (var item in Model.Bonuses)
             {
                 if ((item.Key & (RaceCreatorBonusType.MilitaryDefensive | RaceCreatorBonusType.MilitaryOffensive)) > 0)
                 {
-                    <p class="red">@item.Key.ToString() : @item.Value</p>
+                    <p class="red">@item.Key.ToFriendlyString() : @item.Value.ToString("P1")</p>
                 }
                 else if (item.Key == RaceCreatorBonusType.Economy)
                 {
-                    <p class="yellow">@item.Key.ToString() : @item.Value</p>
+                    <p class="yellow">@item.Key.ToFriendlyString() : @item.Value.ToString("P1")</p>
                 }
                 else if (item.Key == RaceCreatorBonusType.Research)
                 {
-                    <p class="blue">@item.Key.ToString() : @item.Value</p>
+                    <p class="blue">@item.Key.ToFriendlyString() : @item.Value.ToString("P1")</p>
                 }
                 else
                 {
-                    <p>@item.Key.ToString() : @item.Value</p>
+                    <p>@item.Key.ToFriendlyString() : @(item.Value != 1 ? item.Value.ToString("P1") : "")</p>
                 }
 
             }
@@ -37,10 +38,10 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.HeaderName)
+                            @Localisation.RaceCreator_TableName
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.HeaderDescription)
+                            @Localisation.RaceCreator_TableDescription
                         </th>
                         <th></th>
                     </tr>
@@ -53,7 +54,11 @@
                                 @item.Name
                             </td>
                             <td>
-                                @item.Description
+                                @item.Description<br/>
+                                @foreach (var bonus in item.Bonuses)
+                                {
+                                    @bonus.Type.ToFriendlyString()  @(bonus.Value != 1 ? ": "+ bonus.Value.ToString("P1") : "")<br />
+                                }
                             <td>
                                 <form asp-controller="RaceCreator" asp-action="Select" method="post" class="form-horizontal">
                                     <input type="hidden" value="@item.Id" name="id" />

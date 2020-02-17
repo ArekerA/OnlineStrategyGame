@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineStrategyGame.Dtos\OnlineStrategyGame.Dtos.csproj" />
+    <ProjectReference Include="..\OnlineStrategyGame.Localisation\OnlineStrategyGame.Localisation.csproj" />
   </ItemGroup>
 
 </Project>

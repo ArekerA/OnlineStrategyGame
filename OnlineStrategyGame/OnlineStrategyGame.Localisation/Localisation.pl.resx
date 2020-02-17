@@ -123,4 +123,112 @@
   <data name="Main_Login" xml:space="preserve">
     <value>Zaloguj</value>
   </data>
+  <data name="RaceCreator_Lizardman_Name" xml:space="preserve">
+    <value>Jaszczuroludzie</value>
+  </data>
+  <data name="RaceCreator_ArmsRace_Description" xml:space="preserve">
+    <value>Status quo doprowadził do wyścigu zbrojeń i demonstracji potęgi.</value>
+  </data>
+  <data name="RaceCreator_ArmsRace_Name" xml:space="preserve">
+    <value>Wyścig zbrojeń</value>
+  </data>
+  <data name="RaceCreator_Corporation_Description" xml:space="preserve">
+    <value>Chcąc zyskać jeszcze więcej korporacje ruszyły w kosmos.</value>
+  </data>
+  <data name="RaceCreator_Corporation_Name" xml:space="preserve">
+    <value>Korporacje</value>
+  </data>
+  <data name="RaceCreator_Creativity_Description" xml:space="preserve">
+    <value>Wymyślanie nowych sposobów rozwoju.</value>
+  </data>
+  <data name="RaceCreator_Creativity_Name" xml:space="preserve">
+    <value>Kreatywność</value>
+  </data>
+  <data name="RaceCreator_Exploration_Name" xml:space="preserve">
+    <value>Eksploracja</value>
+  </data>
+  <data name="RaceCreator_Extermination_Description" xml:space="preserve">
+    <value>Ciągłe wojny doprowadziły do wyniszczenia planety.</value>
+  </data>
+  <data name="RaceCreator_Extermination_Name" xml:space="preserve">
+    <value>Wyniszczenie</value>
+  </data>
+  <data name="RaceCreator_Fanaticism_Description" xml:space="preserve">
+    <value>Wojna napędza rozwój.</value>
+  </data>
+  <data name="RaceCreator_Fanaticism_Name" xml:space="preserve">
+    <value>Fanatyzm</value>
+  </data>
+  <data name="RaceCreator_Exploration_Description" xml:space="preserve">
+    <value>Chęć odkrycia tego co nieodkryte.</value>
+  </data>
+  <data name="RaceCreator_Human_Description" xml:space="preserve">
+    <value>Ludzie zawsze dążyli do poprawienia swojego bytu. Toczyli wojny nie dla chwały, lecz dla wpływów i zasobów.</value>
+  </data>
+  <data name="RaceCreator_Human_Name" xml:space="preserve">
+    <value>Ludzie</value>
+  </data>
+  <data name="RaceCreator_InformationWepon_Description" xml:space="preserve">
+    <value>Zdobycie informacji o przeciwniku pozwoliło przewidywać jego ruchy, lecz wymagało to otwarcia granic i gry pozorów.</value>
+  </data>
+  <data name="RaceCreator_InformationWepon_Name" xml:space="preserve">
+    <value>Informacja bronią</value>
+  </data>
+  <data name="RaceCreator_Lizardman_Description" xml:space="preserve">
+    <value>Historia Jaszczuroludzi przepełniona jest wojnami.</value>
+  </data>
+  <data name="RaceCreator_Military_Description" xml:space="preserve">
+    <value>Silne wojsko pozwala zabezpieczyć własne tereny przed najazdem, a także rozszerzanie swoich wpływów.</value>
+  </data>
+  <data name="RaceCreator_Military_Name" xml:space="preserve">
+    <value>Wojskowość</value>
+  </data>
+  <data name="RaceCreator_SignalFromSpace_Description" xml:space="preserve">
+    <value>Tajemniczy sygnał z kosmosu sugerujący obecność innej cywilizacji doprowadził do zjednoczenia. Strach przed wspólnym wrogiem jednoczy.</value>
+  </data>
+  <data name="RaceCreator_SignalFromSpace_Name" xml:space="preserve">
+    <value>Sygnał z kosmosu</value>
+  </data>
+  <data name="RaceCreator_Trade_Description" xml:space="preserve">
+    <value>Wymiana dóbr przyśpieszyła rozwój.</value>
+  </data>
+  <data name="RaceCreator_Trade_Name" xml:space="preserve">
+    <value>Handel</value>
+  </data>
+  <data name="RaceCreator_Economy" xml:space="preserve">
+    <value>Ekonomia</value>
+  </data>
+  <data name="RaceCreator_EspionageTechnology" xml:space="preserve">
+    <value>Technologia szpiegowska</value>
+  </data>
+  <data name="RaceCreator_ExplorationTechnology" xml:space="preserve">
+    <value>Technologia eksploracyjna</value>
+  </data>
+  <data name="RaceCreator_ExtendedPlanet" xml:space="preserve">
+    <value>Rozbudowana planeta</value>
+  </data>
+  <data name="RaceCreator_MilitaryDefensive" xml:space="preserve">
+    <value>Wojskowość obronna</value>
+  </data>
+  <data name="RaceCreator_MilitaryOffensive" xml:space="preserve">
+    <value>Wojskowość ofensywna</value>
+  </data>
+  <data name="RaceCreator_MilitaryTechnology" xml:space="preserve">
+    <value>Technologia wojskowa</value>
+  </data>
+  <data name="RaceCreator_Research" xml:space="preserve">
+    <value>Badania</value>
+  </data>
+  <data name="RaceCreator_Summary" xml:space="preserve">
+    <value>Podsumowanie</value>
+  </data>
+  <data name="RaceCreator_Title" xml:space="preserve">
+    <value>Kreator rasy</value>
+  </data>
+  <data name="RaceCreator_TableName" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="RaceCreator_TableDescription" xml:space="preserve">
+    <value>Opis</value>
+  </data>
 </root>

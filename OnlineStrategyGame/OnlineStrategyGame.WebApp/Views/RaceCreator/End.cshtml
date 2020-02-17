@@ -1,4 +1,5 @@
 ﻿@using OnlineStrategyGame.Dtos.RaceCreator.Enums
+@using OnlineStrategyGame.Localisation
 @model OnlineStrategyGame.WebApp.Models.RaceCreatorViewModel
 
 @{
@@ -6,42 +7,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Summary</h1>
+<h1>@Localisation.RaceCreator_Summary</h1>
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <h2>Summary</h2>
+            <h2>@Localisation.RaceCreator_Summary</h2>
             @foreach (var item in Model.Bonuses)
             {
                 if ((item.Key & (RaceCreatorBonusType.MilitaryDefensive | RaceCreatorBonusType.MilitaryOffensive)) > 0)
                 {
-                    <p class="red">@item.Key.ToString() : @item.Value</p>
+                    <p class="red">@item.Key.ToFriendlyString() : @item.Value.ToString("P1")</p>
                 }
                 else if (item.Key == RaceCreatorBonusType.Economy)
                 {
-                    <p class="yellow">@item.Key.ToString() : @item.Value</p>
+                    <p class="yellow">@item.Key.ToFriendlyString() : @item.Value.ToString("P1")</p>
                 }
                 else if (item.Key == RaceCreatorBonusType.Research)
                 {
-                    <p class="blue">@item.Key.ToString() : @item.Value</p>
+                    <p class="blue">@item.Key.ToFriendlyString() : @item.Value.ToString("P1")</p>
                 }
                 else
                 {
-                    <p>@item.Key.ToString() : @item.Value</p>
+                    <p>@item.Key.ToFriendlyString() @(item.Value != 1 ? ": "+item.Value.ToString("P1") : "")</p>
                 }
 
             }
         </div>
         <div class="col-9">
             <p>
-                @foreach (var item in Model.Selected)
+                @for (int i = 0; i < Model.Selected.Count(); i++)
                 {
-                    <span>@item.Name -> </span>
+                    @Model.Selected[i].Name
+                    if (i != (Model.Selected.Count() - 1))
+                    { 
+                        <span>-></span>
+                    }
                 }
             </p>
             @foreach (var item in Model.Selected)
             {
-                <p>@item.Id</p>
+                <p>@item.Description</p>
             }
         </div>
     </div>
