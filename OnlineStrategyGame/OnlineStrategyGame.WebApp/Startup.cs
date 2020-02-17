@@ -56,7 +56,7 @@ namespace OnlineStrategyGame.WebApp
             services.AddScoped<ISolarSystemManager, SolarSystemManager>();
             services.AddScoped<IRaceCreatorManager, RaceCreatorManager>();
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<AppIdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
