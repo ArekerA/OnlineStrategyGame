@@ -61,6 +61,18 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #211b31!important;
+  color: antiquewhite!important;
+}
+.table
+{
+    color:antiquewhite!important;
+}
+.text-light {
+    color: antiquewhite!important;
+}
+.navbar-dark {
+    background-color: #140f22!important;
 }
 .footer {
   position: absolute;
