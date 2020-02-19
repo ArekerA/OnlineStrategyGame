@@ -13,9 +13,10 @@ namespace OnlineStrategyGame.Base.RaceCreator
         {
             get
             {
-                if (elements == null)
-                    elements = InitElements();
-                return elements;
+                //if (elements == null)
+                //    elements = InitElements();
+                //return elements;
+                return InitElements();
             }
             private set => elements = value;
         }
