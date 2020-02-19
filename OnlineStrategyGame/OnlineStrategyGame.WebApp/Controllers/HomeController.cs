@@ -7,12 +7,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OnlineStrategyGame.WebApp.Controllers.Base;
 using OnlineStrategyGame.WebApp.ControllersUtilities;
 using OnlineStrategyGame.WebApp.Models;
 
 namespace OnlineStrategyGame.WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private static bool TestLang = true;
         private readonly ILogger<HomeController> _logger;
@@ -42,21 +43,19 @@ namespace OnlineStrategyGame.WebApp.Controllers
         }
 
         
-        public IActionResult SetLanguage(string returnUrl)
+        public IActionResult SetLanguage(string lang)
         {
-            string culture;
-            if (TestLang)
-                culture = "pl-PL";
-            else
-                culture = "en-US";
-            TestLang = !TestLang;
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(lang)),
             new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
-            return LocalRedirect(returnUrl);
+            return RedirectToAction("Index");
+        }
+        public ActionResult RedirectToDefaultLanguage()
+        {
+            return RedirectToAction("Index", new { lang = CurrentLanguage });
         }
     }
 }

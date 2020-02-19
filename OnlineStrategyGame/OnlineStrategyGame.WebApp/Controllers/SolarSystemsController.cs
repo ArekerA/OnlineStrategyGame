@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,10 +11,12 @@ using OnlineStrategyGame.Base.Galaxy.Interfaces;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Database.MSSQL.Models;
 using OnlineStrategyGame.Dtos.Galaxy;
+using OnlineStrategyGame.WebApp.Controllers.Base;
 
 namespace OnlineStrategyGame.WebApp.Controllers
 {
-    public class SolarSystemsController : Controller
+    [Authorize(Policy = "ActivePlayerOnly")]
+    public class SolarSystemsController : BaseController
     {
         private readonly ApplicationDbContext _context;
         private readonly ISolarSystemManager _solarSystemManager;

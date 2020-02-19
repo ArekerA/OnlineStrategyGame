@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using OnlineStrategyGame.Base.Security;
 using OnlineStrategyGame.Database.MSSQL.Models;
 
 namespace OnlineStrategyGame.WebApp.Areas.Identity.Pages.Account
@@ -94,6 +95,7 @@ namespace OnlineStrategyGame.WebApp.Areas.Identity.Pages.Account
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    await _userManager.AddClaimAsync(user, ClaimStaticManager.GetNewPlayerClaim());
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,

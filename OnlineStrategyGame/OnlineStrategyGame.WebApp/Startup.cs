@@ -2,6 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,7 @@ using OnlineStrategyGame.Base.RaceCreator.Interfaces;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Database.MSSQL.Models;
 using OnlineStrategyGame.Dtos;
+using OnlineStrategyGame.WebApp.Routing;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -32,8 +34,8 @@ namespace OnlineStrategyGame.WebApp
         {
             CultureInfo[] supportedCultures = new[]
             {
-                new CultureInfo("pl-PL"),
-                new CultureInfo("en-US")
+                new CultureInfo("pl"),
+                new CultureInfo("en")
             };
             services.Configure<RequestLocalizationOptions>(options =>
             {
@@ -62,6 +64,15 @@ namespace OnlineStrategyGame.WebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("NewPlayerOnly", policy => policy.RequireClaim("NewPlayer"));
+                options.AddPolicy("ActivePlayerOnly", policy => policy.RequireClaim("ActivePlayer"));
+            });
+            services.Configure<RouteOptions>(options =>
+            {
+                options.ConstraintMap.Add("lang", typeof(LanguageRouteConstraint));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -95,10 +106,15 @@ namespace OnlineStrategyGame.WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{lang:lang}/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
-                    name: "language",
-                    pattern: "Home/SetLanguage/{returnUrl}");
+                    name: "default",
+                    pattern: "{*catchall}",
+                    defaults: new { controller = "Home", action = "RedirectToDefaultLanguage", lang = "en" });
+
+
+
                 endpoints.MapRazorPages();
             });
         }

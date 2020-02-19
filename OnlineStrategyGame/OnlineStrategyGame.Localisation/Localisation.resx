@@ -211,4 +211,10 @@
   <data name="RaceCreator_TableDescription" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Main_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Main_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
 </root>

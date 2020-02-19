@@ -39,7 +39,7 @@
                 {
                     @Model.Selected[i].Name
                     if (i != (Model.Selected.Count() - 1))
-                    { 
+                    {
                         <span>-></span>
                     }
                 }
@@ -48,6 +48,8 @@
             {
                 <p>@item.Description</p>
             }
+            <p><a class="btn-primary" asp-controller="RaceCreator" asp-action="Save">@Localisation.Main_Save</a></p>
+            <p><a class="btn-primary" asp-controller="RaceCreator" asp-action="Index">@Localisation.Main_Back</a></p>
         </div>
     </div>
 </div>

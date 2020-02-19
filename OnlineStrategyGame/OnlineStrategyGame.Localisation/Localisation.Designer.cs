@@ -61,11 +61,29 @@ namespace OnlineStrategyGame.Localisation {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Back.
+        /// </summary>
+        public static string Main_Back {
+            get {
+                return ResourceManager.GetString("Main_Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Login.
         /// </summary>
         public static string Main_Login {
             get {
                 return ResourceManager.GetString("Main_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Save.
+        /// </summary>
+        public static string Main_Save {
+            get {
+                return ResourceManager.GetString("Main_Save", resourceCulture);
             }
         }
         

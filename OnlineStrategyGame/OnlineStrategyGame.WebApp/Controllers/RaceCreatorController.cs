@@ -2,21 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStrategyGame.Base.RaceCreator.Interfaces;
+using OnlineStrategyGame.Base.Security;
+using OnlineStrategyGame.Database.MSSQL.Models;
 using OnlineStrategyGame.Dtos.RaceCreator;
+using OnlineStrategyGame.WebApp.Controllers.Base;
 using OnlineStrategyGame.WebApp.Models;
+using OnlineStrategyGame.WebApp.Routing;
 
 namespace OnlineStrategyGame.WebApp.Controllers
 {
-    public class RaceCreatorController : Controller
+    [Authorize(Policy = "NewPlayerOnly")]
+    [MiddlewareFilter(typeof(LocalizationPipeline))]
+    public class RaceCreatorController : BaseController
     {
         private readonly IRaceCreatorManager _raceCreatorManager;
+        private readonly UserManager<AppIdentityUser> _userManager;
+        private readonly SignInManager<AppIdentityUser> _signInManager;
 
-        public RaceCreatorController(IRaceCreatorManager raceCreatorManager)
+        public RaceCreatorController(UserManager<AppIdentityUser> userManager,
+            IRaceCreatorManager raceCreatorManager,
+            SignInManager<AppIdentityUser> signInManager)
         {
+            _userManager = userManager;
             _raceCreatorManager = raceCreatorManager;
+            _signInManager = signInManager;
+
         }
         // GET: RaceCreator
         public async Task<IActionResult> Index()
@@ -26,6 +41,10 @@ namespace OnlineStrategyGame.WebApp.Controllers
             result.Elements.AddRange(elements);
             //
             return View(result);
+        }
+        public async Task<IActionResult> Select()
+        {
+            return await Index();
         }
 
         [HttpPost]
@@ -54,6 +73,14 @@ namespace OnlineStrategyGame.WebApp.Controllers
         public async Task<IActionResult> End()
         {
             return View();
+        }
+        public async Task<IActionResult> Save()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            await _userManager.RemoveClaimAsync(user, ClaimStaticManager.GetNewPlayerClaim());
+            await _userManager.AddClaimAsync(user, ClaimStaticManager.GetActivePlayerClaim());
+            await _signInManager.RefreshSignInAsync(user);
+            return RedirectToAction("Index","Home");
         }
     }
 }

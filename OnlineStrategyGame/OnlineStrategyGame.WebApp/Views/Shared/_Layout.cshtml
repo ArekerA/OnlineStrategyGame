@@ -25,8 +25,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@($"{Context.Request.Path}{Context.Request.QueryString}")">Lang</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Lang
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="SetLanguage" asp-route-lang="pl">pl</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="SetLanguage" asp-route-lang="en">en</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="RaceCreator" asp-action="Index">Race creator</a>

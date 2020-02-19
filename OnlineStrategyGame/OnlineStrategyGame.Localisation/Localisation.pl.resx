@@ -231,4 +231,10 @@
   <data name="RaceCreator_TableDescription" xml:space="preserve">
     <value>Opis</value>
   </data>
+  <data name="Main_Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Main_Back" xml:space="preserve">
+    <value>Powrót</value>
+  </data>
 </root>
