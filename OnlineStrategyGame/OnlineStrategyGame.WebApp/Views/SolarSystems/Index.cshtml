@@ -1,4 +1,6 @@
-﻿@model IEnumerable<OnlineStrategyGame.Dtos.Galaxy.SolarSystemDto>
+﻿
+@using OnlineStrategyGame.Localisation
+@model OnlineStrategyGame.Dtos.Galaxy.SolarSystemDto
 
 @{
     ViewData["Title"] = "SolarSystemsView";
@@ -7,51 +9,89 @@
 
 <h1>SolarSystemView</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ruler)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Star)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CordX)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CordY)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CordZ)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ruler.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Star.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CordX)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CordY)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CordZ)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form asp-controller="SolarSystems" asp-action="GetSolarSystem" method="post" class="form-horizontal">
+                X: <input type="number" name="x" />
+                Y: <input type="number" name="y" />
+                Z: <input type="number" name="z" />
+                <button type="submit" class="btn btn-primary" name="provider" value="Select" title="Select">@Localisation.Main_Go</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            @Localisation.Galaxy_Star
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_Mass
+                        </td>
+                        <td>
+                            @Model.Star.Mass
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_Radius
+                        </td>
+                        <td>
+                            @Model.Star.Radius
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_GravitationalAcceleration
+                        </td>
+                        <td>
+                            @Model.Star.GravitationalAcceleration
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_Temperature
+                        </td>
+                        <td>
+                            @Model.Star.Temperature
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            @Localisation.Galaxy_Planets
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Planet_DistanceToStar
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Planets)
+                    {
+                        <tr>
+                            <td>
+                                @item.DistanceToStar
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

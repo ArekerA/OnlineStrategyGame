@@ -61,11 +61,92 @@ namespace OnlineStrategyGame.Localisation {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Planet.
+        /// </summary>
+        public static string Galaxy_Planet {
+            get {
+                return ResourceManager.GetString("Galaxy_Planet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Distance to star.
+        /// </summary>
+        public static string Galaxy_Planet_DistanceToStar {
+            get {
+                return ResourceManager.GetString("Galaxy_Planet_DistanceToStar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Planets.
+        /// </summary>
+        public static string Galaxy_Planets {
+            get {
+                return ResourceManager.GetString("Galaxy_Planets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Star.
+        /// </summary>
+        public static string Galaxy_Star {
+            get {
+                return ResourceManager.GetString("Galaxy_Star", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Gravitational acceleration.
+        /// </summary>
+        public static string Galaxy_Star_GravitationalAcceleration {
+            get {
+                return ResourceManager.GetString("Galaxy_Star_GravitationalAcceleration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Mass.
+        /// </summary>
+        public static string Galaxy_Star_Mass {
+            get {
+                return ResourceManager.GetString("Galaxy_Star_Mass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Radius.
+        /// </summary>
+        public static string Galaxy_Star_Radius {
+            get {
+                return ResourceManager.GetString("Galaxy_Star_Radius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Temperature.
+        /// </summary>
+        public static string Galaxy_Star_Temperature {
+            get {
+                return ResourceManager.GetString("Galaxy_Star_Temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Back.
         /// </summary>
         public static string Main_Back {
             get {
                 return ResourceManager.GetString("Main_Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Go.
+        /// </summary>
+        public static string Main_Go {
+            get {
+                return ResourceManager.GetString("Main_Go", resourceCulture);
             }
         }
         
@@ -84,6 +165,15 @@ namespace OnlineStrategyGame.Localisation {
         public static string Main_Save {
             get {
                 return ResourceManager.GetString("Main_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Select.
+        /// </summary>
+        public static string Main_Select {
+            get {
+                return ResourceManager.GetString("Main_Select", resourceCulture);
             }
         }
         

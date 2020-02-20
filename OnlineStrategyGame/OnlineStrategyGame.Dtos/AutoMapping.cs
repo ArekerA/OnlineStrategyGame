@@ -10,6 +10,8 @@ namespace OnlineStrategyGame.Dtos
         public AutoMapping()
         {
             CreateMap<SolarSystem, SolarSystemDto>();
+            CreateMap<Star, StarDto>();
+            CreateMap<Planet, PlanetDto>();
         }
     }
 }

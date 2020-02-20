@@ -14,7 +14,7 @@ namespace OnlineStrategyGame.Dtos.Galaxy
         public float GravitationalAcceleration { get; set; }
         public float MaxTemperature { get; set; }
         public float MinTemperature { get; set; }
-        public float DistancenToStar { get; set; }
+        public float DistanceToStar { get; set; }
         public SolarSystemDto SolarSystem { get; set; }
         public int SolarSystemId { get; set; }
     }

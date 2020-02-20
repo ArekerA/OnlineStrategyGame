@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using OnlineStrategyGame.Base.Galaxy.Interfaces;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Database.MSSQL.Models;
@@ -32,7 +33,10 @@ namespace OnlineStrategyGame.Base.Galaxy
         {
             if (CheckIsSolarSystemExist(cordX, cordY, cordZ))
             {
-                var solarSystem = _context.SolarSystems.FirstOrDefault(a => a.CordX == cordX && a.CordY == cordY && a.CordZ == cordZ);
+                var solarSystem = _context.SolarSystems
+                    .Include(a => a.Star)
+                    .Include(a => a.Planets)
+                    .FirstOrDefault(a => a.CordX == cordX && a.CordY == cordY && a.CordZ == cordZ);
                 if (solarSystem == null)
                 {
                     var star = new Star
@@ -47,7 +51,7 @@ namespace OnlineStrategyGame.Base.Galaxy
                         GravitationalAcceleration = 1,
                         Mass = 100,
                         Radius = 10,
-                        DistancenToStar = 10,
+                        DistanceToStar = 10,
                         MaxTemperature = 10,
                         MinTemperature = 0,
                     };

@@ -217,4 +217,34 @@
   <data name="Main_Back" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="Main_Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Main_Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="Galaxy_Star" xml:space="preserve">
+    <value>Star</value>
+  </data>
+  <data name="Galaxy_Star_Mass" xml:space="preserve">
+    <value>Mass</value>
+  </data>
+  <data name="Galaxy_Star_Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="Galaxy_Star_GravitationalAcceleration" xml:space="preserve">
+    <value>Gravitational acceleration</value>
+  </data>
+  <data name="Galaxy_Star_Temperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="Galaxy_Planet" xml:space="preserve">
+    <value>Planet</value>
+  </data>
+  <data name="Galaxy_Planets" xml:space="preserve">
+    <value>Planets</value>
+  </data>
+  <data name="Galaxy_Planet_DistanceToStar" xml:space="preserve">
+    <value>Distance to star</value>
+  </data>
 </root>
