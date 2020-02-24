@@ -9,5 +9,7 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
     {
         [PersonalData]
         public string Name { get; set; }
+
+        public virtual RaceBonuses RaceBonuses { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace OnlineStrategyGame.Base.RaceCreator.Interfaces
         RaceCreatorElementDto GetElement(int id);
         IEnumerable<RaceCreatorElementDto> GetElements(int id = 0);
         Dictionary<RaceCreatorBonusType, double> GetSummaryBonuses(IEnumerable<RaceCreatorElementDto> elements);
+        bool Save(int[] ids, string userId);
     }
 }

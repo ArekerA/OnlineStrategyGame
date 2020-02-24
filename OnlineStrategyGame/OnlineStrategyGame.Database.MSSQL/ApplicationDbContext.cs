@@ -12,6 +12,7 @@ namespace OnlineStrategyGame.Database.MSSQL
         public DbSet<Planet> Planets { get; set; }
         public DbSet<Star> Stars { get; set; }
         public DbSet<SolarSystem> SolarSystems { get; set; }
+        public DbSet<RaceBonuses> RaceBonuses { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -22,6 +23,9 @@ namespace OnlineStrategyGame.Database.MSSQL
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<SolarSystem>()
                 .HasIndex(p => new { p.CordX, p.CordY, p.CordZ });
+            modelBuilder.Entity<AppIdentityUser>(
+                a => a.HasOne(b=>b.RaceBonuses).WithOne(b=>b.AppIdentityUser).HasForeignKey<RaceBonuses>(b => b.AppIdentityUserId)
+                );
         }
     }
 }

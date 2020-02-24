@@ -28,7 +28,7 @@
                 }
                 else
                 {
-                    <p>@item.Key.ToFriendlyString() @(item.Value != 1 ? ": "+item.Value.ToString("P1") : "")</p>
+                    <p>@item.Key.ToFriendlyString() @(item.Value != 1 ? ": " + item.Value.ToString("P1") : "")</p>
                 }
 
             }
@@ -48,7 +48,13 @@
             {
                 <p>@item.Description</p>
             }
-            <p><a class="btn-primary" asp-controller="RaceCreator" asp-action="Save">@Localisation.Main_Save</a></p>
+            <form asp-controller="RaceCreator" asp-action="Save" method="get">
+                @foreach (var item in Model.Selected)
+                {
+                    <input type="hidden" name="ids" value="@item.Id" />
+                }
+                <p><button type="submit" class="btn btn-primary" asp-controller="RaceCreator" asp-action="Save">@Localisation.Main_Save</button></p>
+            </form>
             <p><a class="btn-primary" asp-controller="RaceCreator" asp-action="Index">@Localisation.Main_Back</a></p>
         </div>
     </div>

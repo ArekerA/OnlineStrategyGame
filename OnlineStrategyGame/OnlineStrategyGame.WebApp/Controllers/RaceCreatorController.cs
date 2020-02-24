@@ -70,16 +70,17 @@ namespace OnlineStrategyGame.WebApp.Controllers
             return View(nameof(Index), result);
         }
 
-        public async Task<IActionResult> End()
+        public async Task<IActionResult> End(int[] selected)
         {
-            return View();
+            return View(selected);
         }
-        public async Task<IActionResult> Save()
+        public async Task<IActionResult> Save(int[] ids)
         {
             var user = await _userManager.GetUserAsync(User);
             await _userManager.RemoveClaimAsync(user, ClaimStaticManager.GetNewPlayerClaim());
             await _userManager.AddClaimAsync(user, ClaimStaticManager.GetActivePlayerClaim());
             await _signInManager.RefreshSignInAsync(user);
+            _raceCreatorManager.Save(ids, user.Id);
             return RedirectToAction("Index","Home");
         }
     }
