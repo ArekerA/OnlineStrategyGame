@@ -247,4 +247,13 @@
   <data name="Galaxy_Planet_DistanceToStar" xml:space="preserve">
     <value>Distance to star</value>
   </data>
+  <data name="Galaxy_Planet_MinTemperature" xml:space="preserve">
+    <value>Minimum temperature</value>
+  </data>
+  <data name="Galaxy_Planet_MaxTemperature" xml:space="preserve">
+    <value>Maximum temperature</value>
+  </data>
+  <data name="Galaxy_Planet_DefaultName" xml:space="preserve">
+    <value>Planet</value>
+  </data>
 </root>

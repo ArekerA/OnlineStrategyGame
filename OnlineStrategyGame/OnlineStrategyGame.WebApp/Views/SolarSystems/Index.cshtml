@@ -76,7 +76,13 @@
                 <thead>
                     <tr>
                         <td>
+                            @Localisation.Galaxy_Planet
+                        </td>
+                        <td>
                             @Localisation.Galaxy_Planet_DistanceToStar
+                        </td>
+                        <td>
+
                         </td>
                     </tr>
                 </thead>
@@ -85,7 +91,13 @@
                     {
                         <tr>
                             <td>
+                                @item.Name
+                            </td>
+                            <td>
                                 @item.DistanceToStar
+                            </td>
+                            <td>
+                                <a asp-controller="Planet" asp-action="Index" asp-route-id="@item.Id">@Localisation.Main_Go</a>
                             </td>
                         </tr>
                     }

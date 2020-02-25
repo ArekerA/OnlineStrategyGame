@@ -57,6 +57,7 @@ namespace OnlineStrategyGame.WebApp
             services.AddSingleton(mapper);
             services.AddScoped<ISolarSystemManager, SolarSystemManager>();
             services.AddScoped<IRaceCreatorManager, RaceCreatorManager>();
+            services.AddScoped<IPlanetManager, PlanetManager>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));

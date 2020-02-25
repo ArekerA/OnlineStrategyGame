@@ -1,0 +1,66 @@
+﻿
+@using OnlineStrategyGame.Localisation
+@model OnlineStrategyGame.Dtos.Galaxy.PlanetDto
+
+@{
+    ViewData["Title"] = "PlanetView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>PlanetView</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            @Model.Name
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_Mass
+                        </td>
+                        <td>
+                            @Model.Mass
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_Radius
+                        </td>
+                        <td>
+                            @Model.Radius
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Star_GravitationalAcceleration
+                        </td>
+                        <td>
+                            @Model.GravitationalAcceleration
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Planet_MinTemperature
+                        </td>
+                        <td>
+                            @Model.MinTemperature
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Localisation.Galaxy_Planet_MaxTemperature
+                        </td>
+                        <td>
+                            @Model.MaxTemperature
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

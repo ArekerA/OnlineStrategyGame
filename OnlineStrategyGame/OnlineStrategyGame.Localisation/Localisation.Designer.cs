@@ -70,11 +70,38 @@ namespace OnlineStrategyGame.Localisation {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Planet.
+        /// </summary>
+        public static string Galaxy_Planet_DefaultName {
+            get {
+                return ResourceManager.GetString("Galaxy_Planet_DefaultName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Distance to star.
         /// </summary>
         public static string Galaxy_Planet_DistanceToStar {
             get {
                 return ResourceManager.GetString("Galaxy_Planet_DistanceToStar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Maximum temperature.
+        /// </summary>
+        public static string Galaxy_Planet_MaxTemperature {
+            get {
+                return ResourceManager.GetString("Galaxy_Planet_MaxTemperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Minimum temperature.
+        /// </summary>
+        public static string Galaxy_Planet_MinTemperature {
+            get {
+                return ResourceManager.GetString("Galaxy_Planet_MinTemperature", resourceCulture);
             }
         }
         
