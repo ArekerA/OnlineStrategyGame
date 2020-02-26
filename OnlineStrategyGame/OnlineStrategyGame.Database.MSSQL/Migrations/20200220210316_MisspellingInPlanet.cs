@@ -24,7 +24,10 @@ namespace OnlineStrategyGame.Database.MSSQL.Migrations
 
 				INSERT INTO `Planets` (Id, Mass, Radius, GravitationalAcceleration, MaxTemperature, MinTemperature, DistanceToStar, SolarSystemId)
 								SELECT Id, Mass, Radius, GravitationalAcceleration, MaxTemperature, MinTemperature, DistancenToStar, SolarSystemId
-								FROM `Planets_copy`");
+								FROM `Planets_copy`;
+
+                DROP TABLE Planets_copy;
+			");
 			migrationBuilder.Sql("PRAGMA foreign_keys = on; ");
 		}
 

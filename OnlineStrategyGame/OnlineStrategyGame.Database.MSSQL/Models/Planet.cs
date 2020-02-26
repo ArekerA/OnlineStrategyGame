@@ -12,6 +12,8 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
+        public AppIdentityUser Ruler { get; set; }
+        public string RulerId { get; set; }
 
         public float Mass { get; set; }
         public float Radius { get; set; }

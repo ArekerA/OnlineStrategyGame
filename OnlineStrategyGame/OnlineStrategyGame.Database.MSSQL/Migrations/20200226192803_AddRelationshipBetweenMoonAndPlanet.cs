@@ -14,16 +14,16 @@ namespace OnlineStrategyGame.Database.MSSQL.Migrations
 	                    `Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                     `PlanetId` INTEGER NOT NULL,
                     CONSTRAINT FK_Moons_Planets_PlanetId
-                    FOREIGN KEY (PlanetId) REFERENCES Planet(Id) ON DELETE CASCADE
+                    FOREIGN KEY (PlanetId) REFERENCES Planets(Id) ON DELETE CASCADE
                 );
-
-                CREATE INDEX IX_Moons_PlanetId ON Moons (PlanetId);
 
 
                 INSERT INTO `Moons` (Id, PlanetId)
 								SELECT Id, 1
 								FROM `Moons_copy`;
                 DROP TABLE Moons_copy;
+
+                CREATE INDEX IX_Moons_PlanetId ON Moons (PlanetId);
             ");
             migrationBuilder.Sql("PRAGMA foreign_keys = on; ");
         }

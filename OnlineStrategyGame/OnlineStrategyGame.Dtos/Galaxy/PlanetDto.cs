@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnlineStrategyGame.Dtos.Galaxy
 {
@@ -18,5 +19,7 @@ namespace OnlineStrategyGame.Dtos.Galaxy
         public float DistanceToStar { get; set; }
         public SolarSystemDto SolarSystem { get; set; }
         public int SolarSystemId { get; set; }
+        public ResourcesDto Resources { get; set; }
+        public List<MoonDto> Moons { get; set; }
     }
 }

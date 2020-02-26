@@ -29,6 +29,14 @@ namespace OnlineStrategyGame.Database.MSSQL
                 a => a.HasOne(b=>b.RaceBonuses).WithOne(b=>b.AppIdentityUser).HasForeignKey<RaceBonuses>(b => b.AppIdentityUserId)
                 );
             modelBuilder.Entity<Planet>()
+                .HasOne(a => a.Ruler)
+                .WithMany(a => a.Planets)
+                .OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<Moon>()
+                .HasOne(a => a.Ruler)
+                .WithMany(a => a.Moons)
+                .OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<Planet>()
                 .HasOne(a => a.Resources)
                 .WithOne(a => a.Planet)
                 .HasForeignKey<Resources>(a => a.PlanetId);

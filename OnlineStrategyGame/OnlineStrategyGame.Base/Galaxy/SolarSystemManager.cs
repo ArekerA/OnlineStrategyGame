@@ -46,6 +46,38 @@ namespace OnlineStrategyGame.Base.Galaxy
                         Radius = 10,
                         Temperature = 100
                     };
+                    var moonResources = new Resources
+                    {
+                        Aluminium = 10,
+                        AluminiumAlloy = 5,
+                        Antimatter = 1,
+                        Carbon = 15,
+                        Food = 10,
+                        Graphene = 5,
+                        Helium3 = 1,
+                        Hydrogen = 10,
+                        Titanium = 1,
+                        TitaniumAlloy = 1,
+                        Uranium = 1
+                    };
+                    var moon = new Moon
+                    {
+                        Resources = moonResources
+                    };
+                    var planetResources = new Resources
+                    {
+                        Aluminium = 10,
+                        AluminiumAlloy = 5,
+                        Antimatter = 1,
+                        Carbon = 15,
+                        Food = 10,
+                        Graphene = 5,
+                        Helium3 = 1,
+                        Hydrogen = 10,
+                        Titanium = 1,
+                        TitaniumAlloy = 1,
+                        Uranium = 1
+                    };
                     var planet = new Planet
                     {
                         GravitationalAcceleration = 1,
@@ -54,13 +86,14 @@ namespace OnlineStrategyGame.Base.Galaxy
                         DistanceToStar = 10,
                         MaxTemperature = 10,
                         MinTemperature = 0,
+                        Resources = planetResources,
+                        Moons = new List<Moon>(){ moon }
                     };
                     solarSystem = new SolarSystem
                     {
                         CordX = cordX,
                         CordY = cordY,
                         CordZ = cordZ,
-                        Ruler = null,
                         Star = star,
                         Planets = new List<Planet>() { planet }
 

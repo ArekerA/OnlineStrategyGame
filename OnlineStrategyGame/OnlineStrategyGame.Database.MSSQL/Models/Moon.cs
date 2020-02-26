@@ -9,6 +9,8 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
     {
         [Key]
         public int Id { get; set; }
+        public AppIdentityUser Ruler { get; set; }
+        public string RulerId { get; set; }
         public Resources Resources { get; set; }
         public Planet Planet { get; set; }
         public int PlanetId { get; set; }

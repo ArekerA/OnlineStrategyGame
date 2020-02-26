@@ -11,8 +11,6 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         [Key]
         public int Id { get; set; }
 
-        public AppIdentityUser Ruler { get; set; }
-        public string RulerId { get; set; }
         public Star Star { get; set; }
         public int StarId { get; set; }
         public List<Planet> Planets { get; set; }
