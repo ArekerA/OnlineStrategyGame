@@ -10,7 +10,9 @@ namespace OnlineStrategyGame.Database.MSSQL
     public class ApplicationDbContext : IdentityDbContext<AppIdentityUser>
     {
         public DbSet<Planet> Planets { get; set; }
+        public DbSet<Moon> Moons { get; set; }
         public DbSet<Star> Stars { get; set; }
+        public DbSet<Resources> Resources { get; set; }
         public DbSet<SolarSystem> SolarSystems { get; set; }
         public DbSet<RaceBonuses> RaceBonuses { get; set; }
 
@@ -26,6 +28,14 @@ namespace OnlineStrategyGame.Database.MSSQL
             modelBuilder.Entity<AppIdentityUser>(
                 a => a.HasOne(b=>b.RaceBonuses).WithOne(b=>b.AppIdentityUser).HasForeignKey<RaceBonuses>(b => b.AppIdentityUserId)
                 );
+            modelBuilder.Entity<Planet>()
+                .HasOne(a => a.Resources)
+                .WithOne(a => a.Planet)
+                .HasForeignKey<Resources>(a => a.PlanetId);
+            modelBuilder.Entity<Moon>()
+                .HasOne(a => a.Resources)
+                .WithOne(a => a.Moon)
+                .HasForeignKey<Resources>(a => a.MoonId);
         }
     }
 }

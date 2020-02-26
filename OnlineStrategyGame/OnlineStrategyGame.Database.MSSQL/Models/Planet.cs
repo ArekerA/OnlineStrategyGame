@@ -20,5 +20,6 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public float DistanceToStar { get; set; }
         public SolarSystem SolarSystem { get; set; }
         public int SolarSystemId { get; set; }
+        public Resources Resources { get; set; }
     }
 }
