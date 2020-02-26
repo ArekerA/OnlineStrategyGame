@@ -12,6 +12,8 @@ namespace OnlineStrategyGame.Dtos
             CreateMap<SolarSystem, SolarSystemDto>();
             CreateMap<Star, StarDto>();
             CreateMap<Planet, PlanetDto>();
+            CreateMap<Moon, MoonDto>();
+            CreateMap<Resources, ResourcesDto>();
         }
     }
 }
