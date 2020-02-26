@@ -36,6 +36,9 @@ namespace OnlineStrategyGame.Database.MSSQL
                 .HasOne(a => a.Resources)
                 .WithOne(a => a.Moon)
                 .HasForeignKey<Resources>(a => a.MoonId);
+            modelBuilder.Entity<Planet>()
+                .HasMany(a => a.Moons)
+                .WithOne(a => a.Planet);
         }
     }
 }

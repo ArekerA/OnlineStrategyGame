@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnlineStrategyGame.Database.MSSQL.Models
 {
@@ -21,5 +22,6 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public SolarSystem SolarSystem { get; set; }
         public int SolarSystemId { get; set; }
         public Resources Resources { get; set; }
+        public List<Moon> Moons { get; set; }
     }
 }
