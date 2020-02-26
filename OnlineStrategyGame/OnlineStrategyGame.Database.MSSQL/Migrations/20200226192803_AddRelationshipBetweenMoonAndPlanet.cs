@@ -6,24 +6,26 @@ namespace OnlineStrategyGame.Database.MSSQL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "PlanetId",
-                table: "Moons",
-                nullable: false,
-                defaultValue: 0);
+            migrationBuilder.Sql("PRAGMA foreign_keys = off; ");
+            migrationBuilder.Sql(@"
+				ALTER TABLE `Moons` RENAME TO `Moons_copy`;
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Moons_PlanetId",
-                table: "Moons",
-                column: "PlanetId");
+                CREATE TABLE `Moons` (
+	                    `Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    `PlanetId` INTEGER NOT NULL,
+                    CONSTRAINT FK_Moons_Planets_PlanetId
+                    FOREIGN KEY (PlanetId) REFERENCES Planet(Id) ON DELETE CASCADE
+                );
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Moons_Planets_PlanetId",
-                table: "Moons",
-                column: "PlanetId",
-                principalTable: "Planets",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                CREATE INDEX IX_Moons_PlanetId ON Moons (PlanetId);
+
+
+                INSERT INTO `Moons` (Id, PlanetId)
+								SELECT Id, 1
+								FROM `Moons_copy`;
+                DROP TABLE Moons_copy;
+            ");
+            migrationBuilder.Sql("PRAGMA foreign_keys = on; ");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
