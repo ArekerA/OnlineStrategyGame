@@ -9,6 +9,22 @@
     <Compile Remove="Migrations\20200214214032_BasicSolarSystem.Designer.cs" />
     <Compile Remove="Migrations\20200214215640_AddSolarSystemToStar.cs" />
     <Compile Remove="Migrations\20200214215640_AddSolarSystemToStar.Designer.cs" />
+    <Compile Remove="Migrations\20200217221026_ChangeToSqlite.cs" />
+    <Compile Remove="Migrations\20200217221026_ChangeToSqlite.Designer.cs" />
+    <Compile Remove="Migrations\20200220210316_MisspellingInPlanet.cs" />
+    <Compile Remove="Migrations\20200220210316_MisspellingInPlanet.Designer.cs" />
+    <Compile Remove="Migrations\20200224195037_SaveRaceCreatorBonusesToDatabase.cs" />
+    <Compile Remove="Migrations\20200224195037_SaveRaceCreatorBonusesToDatabase.Designer.cs" />
+    <Compile Remove="Migrations\20200225205222_AddNameToPlanet.cs" />
+    <Compile Remove="Migrations\20200225205222_AddNameToPlanet.Designer.cs" />
+    <Compile Remove="Migrations\20200226183439_AddMoonAndResourcesToMoonAndPlanet.cs" />
+    <Compile Remove="Migrations\20200226183439_AddMoonAndResourcesToMoonAndPlanet.Designer.cs" />
+    <Compile Remove="Migrations\20200226183702_AddHeliumToResources.cs" />
+    <Compile Remove="Migrations\20200226183702_AddHeliumToResources.Designer.cs" />
+    <Compile Remove="Migrations\20200226192803_AddRelationshipBetweenMoonAndPlanet.cs" />
+    <Compile Remove="Migrations\20200226192803_AddRelationshipBetweenMoonAndPlanet.Designer.cs" />
+    <Compile Remove="Migrations\20200226200407_ChangesForRuler.cs" />
+    <Compile Remove="Migrations\20200226200407_ChangesForRuler.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
