@@ -62,7 +62,8 @@ namespace OnlineStrategyGame.Base.Galaxy
                     };
                     var moon = new Moon
                     {
-                        Resources = moonResources
+                        Resources = moonResources,
+                        Population = 0,
                     };
                     var planetResources = new Resources
                     {
@@ -87,7 +88,8 @@ namespace OnlineStrategyGame.Base.Galaxy
                         MaxTemperature = 10,
                         MinTemperature = 0,
                         Resources = planetResources,
-                        Moons = new List<Moon>(){ moon }
+                        Moons = new List<Moon>(){ moon },
+                        Population = 1_000_000
                     };
                     solarSystem = new SolarSystem
                     {

@@ -115,6 +115,114 @@ namespace OnlineStrategyGame.Localisation {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Population.
+        /// </summary>
+        public static string Galaxy_Population {
+            get {
+                return ResourceManager.GetString("Galaxy_Population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Aluminium.
+        /// </summary>
+        public static string Galaxy_Resources_Aluminium {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Aluminium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Aluminium alloy.
+        /// </summary>
+        public static string Galaxy_Resources_AluminiumAlloy {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_AluminiumAlloy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Antimatter.
+        /// </summary>
+        public static string Galaxy_Resources_Animatter {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Animatter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Carbon.
+        /// </summary>
+        public static string Galaxy_Resources_Carbon {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Carbon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Food.
+        /// </summary>
+        public static string Galaxy_Resources_Food {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Graphene.
+        /// </summary>
+        public static string Galaxy_Resources_Graphene {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Graphene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Helium-3.
+        /// </summary>
+        public static string Galaxy_Resources_Helium3 {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Helium3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Hydrogen.
+        /// </summary>
+        public static string Galaxy_Resources_Hydrogen {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Hydrogen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Titanium.
+        /// </summary>
+        public static string Galaxy_Resources_Titanium {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Titanium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Titanium alloy.
+        /// </summary>
+        public static string Galaxy_Resources_TitaniumAlloy {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_TitaniumAlloy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Uranium.
+        /// </summary>
+        public static string Galaxy_Resources_Uranium {
+            get {
+                return ResourceManager.GetString("Galaxy_Resources_Uranium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Star.
         /// </summary>
         public static string Galaxy_Star {

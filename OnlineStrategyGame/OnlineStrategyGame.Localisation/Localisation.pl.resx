@@ -276,4 +276,40 @@
   <data name="Galaxy_Planet_DefaultName" xml:space="preserve">
     <value>Planeta</value>
   </data>
+  <data name="Galaxy_Resources_Carbon" xml:space="preserve">
+    <value>Węgiel</value>
+  </data>
+  <data name="Galaxy_Resources_Uranium" xml:space="preserve">
+    <value>Uran</value>
+  </data>
+  <data name="Galaxy_Resources_Titanium" xml:space="preserve">
+    <value>Tytan</value>
+  </data>
+  <data name="Galaxy_Resources_Aluminium" xml:space="preserve">
+    <value>Aluminium</value>
+  </data>
+  <data name="Galaxy_Resources_Hydrogen" xml:space="preserve">
+    <value>Wodór</value>
+  </data>
+  <data name="Galaxy_Resources_Food" xml:space="preserve">
+    <value>Żywność</value>
+  </data>
+  <data name="Galaxy_Resources_Helium3" xml:space="preserve">
+    <value>Hel-3</value>
+  </data>
+  <data name="Galaxy_Resources_Graphene" xml:space="preserve">
+    <value>Grafen</value>
+  </data>
+  <data name="Galaxy_Resources_AluminiumAlloy" xml:space="preserve">
+    <value>Stopy aluminium</value>
+  </data>
+  <data name="Galaxy_Resources_TitaniumAlloy" xml:space="preserve">
+    <value>Stopy tytanu</value>
+  </data>
+  <data name="Galaxy_Resources_Animatter" xml:space="preserve">
+    <value>Antymateria</value>
+  </data>
+  <data name="Galaxy_Population" xml:space="preserve">
+    <value>Ludność</value>
+  </data>
 </root>

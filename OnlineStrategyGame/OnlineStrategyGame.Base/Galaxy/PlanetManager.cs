@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using OnlineStrategyGame.Base.Galaxy.Interfaces;
 using OnlineStrategyGame.Database.MSSQL;
 using OnlineStrategyGame.Dtos.Galaxy;
@@ -20,7 +21,7 @@ namespace OnlineStrategyGame.Base.Galaxy
 
         public PlanetDto GetPlanet(int id)
         {
-            var planet = _context.Planets.FirstOrDefault(a => a.Id == id);
+            var planet = _context.Planets.Include(a => a.Resources).FirstOrDefault(a => a.Id == id);
             if (planet == null)
                 return null;
             return _mapper.Map<PlanetDto>(planet);

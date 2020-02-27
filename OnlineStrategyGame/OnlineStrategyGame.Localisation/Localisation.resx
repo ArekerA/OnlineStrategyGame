@@ -256,4 +256,40 @@
   <data name="Galaxy_Planet_DefaultName" xml:space="preserve">
     <value>Planet</value>
   </data>
+  <data name="Galaxy_Resources_Carbon" xml:space="preserve">
+    <value>Carbon</value>
+  </data>
+  <data name="Galaxy_Resources_Uranium" xml:space="preserve">
+    <value>Uranium</value>
+  </data>
+  <data name="Galaxy_Resources_Titanium" xml:space="preserve">
+    <value>Titanium</value>
+  </data>
+  <data name="Galaxy_Resources_Aluminium" xml:space="preserve">
+    <value>Aluminium</value>
+  </data>
+  <data name="Galaxy_Resources_Hydrogen" xml:space="preserve">
+    <value>Hydrogen</value>
+  </data>
+  <data name="Galaxy_Resources_Food" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="Galaxy_Resources_Helium3" xml:space="preserve">
+    <value>Helium-3</value>
+  </data>
+  <data name="Galaxy_Resources_Graphene" xml:space="preserve">
+    <value>Graphene</value>
+  </data>
+  <data name="Galaxy_Resources_AluminiumAlloy" xml:space="preserve">
+    <value>Aluminium alloy</value>
+  </data>
+  <data name="Galaxy_Resources_TitaniumAlloy" xml:space="preserve">
+    <value>Titanium alloy</value>
+  </data>
+  <data name="Galaxy_Resources_Animatter" xml:space="preserve">
+    <value>Antimatter</value>
+  </data>
+  <data name="Galaxy_Population" xml:space="preserve">
+    <value>Population</value>
+  </data>
 </root>
