@@ -25,5 +25,6 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public int SolarSystemId { get; set; }
         public Resources Resources { get; set; }
         public List<Moon> Moons { get; set; }
+        public int Population { get; set; }
     }
 }

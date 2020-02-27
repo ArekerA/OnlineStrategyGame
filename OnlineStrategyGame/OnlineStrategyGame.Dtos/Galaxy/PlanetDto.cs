@@ -21,5 +21,6 @@ namespace OnlineStrategyGame.Dtos.Galaxy
         public int SolarSystemId { get; set; }
         public ResourcesDto Resources { get; set; }
         public List<MoonDto> Moons { get; set; }
+        public int Population { get; set; }
     }
 }

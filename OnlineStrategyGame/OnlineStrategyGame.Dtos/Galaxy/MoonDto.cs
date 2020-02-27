@@ -10,5 +10,6 @@ namespace OnlineStrategyGame.Dtos.Galaxy
         public ResourcesDto Resources { get; set; }
         public PlanetDto Planet { get; set; }
         public int PlanetId { get; set; }
+        public int Population { get; set; }
     }
 }
