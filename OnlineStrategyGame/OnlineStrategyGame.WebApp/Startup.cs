@@ -106,11 +106,21 @@ namespace OnlineStrategyGame.WebApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{lang:lang}/{controller=Home}/{action=Index}/{id?}");
+                    name: "areas",
+                    pattern: "{lang:lang}/{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "areasDefault",
+                    pattern: "{lang=en}/{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
+                    pattern: "{lang:lang}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "defaultWithoutLang",
+                    pattern: "{lang=en}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "all",
                     pattern: "{*catchall}",
                     defaults: new { controller = "Home", action = "RedirectToDefaultLanguage", lang = "en" });
 
