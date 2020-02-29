@@ -14,6 +14,7 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public Resources Resources { get; set; }
         public Buildings Buildings { get; set; }
         public Planet Planet { get; set; }
+        public Triats Triats { get; set; }
         public int PlanetId { get; set; }
         public int Population { get; set; }
     }
