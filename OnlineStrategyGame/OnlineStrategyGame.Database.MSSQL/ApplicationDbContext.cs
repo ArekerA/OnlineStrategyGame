@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using OnlineStrategyGame.Database.MSSQL.Models;
 
@@ -22,14 +19,18 @@ namespace OnlineStrategyGame.Database.MSSQL
             : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<SolarSystem>()
                 .HasIndex(p => new { p.CordX, p.CordY, p.CordZ });
             modelBuilder.Entity<AppIdentityUser>(
-                a => a.HasOne(b=>b.RaceBonuses).WithOne(b=>b.AppIdentityUser).HasForeignKey<RaceBonuses>(b => b.AppIdentityUserId)
-                );
+                a =>
+                {
+                    a.HasOne(b => b.RaceBonuses).WithOne(b => b.AppIdentityUser).HasForeignKey<RaceBonuses>(b => b.AppIdentityUserId);
+                    a.HasOne(b => b.Technology).WithOne(b => b.AppIdentityUser).HasForeignKey<Technology>(b => b.AppIdentityUserId);
+                });
             modelBuilder.Entity<Planet>()
                 .HasOne(a => a.Ruler)
                 .WithMany(a => a.Planets)

@@ -11,6 +11,7 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public string Name { get; set; }
 
         public virtual RaceBonuses RaceBonuses { get; set; }
+        public virtual Technology Technology { get; set; }
         public List<Planet> Planets { get; set; }
         public List<Moon> Moons { get; set; }
     }
