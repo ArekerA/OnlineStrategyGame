@@ -1,7 +1,7 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using OnlineStrategyGame.Database.MSSQL.Models;
 using OnlineStrategyGame.Dtos.Galaxy;
+using OnlineStrategyGame.Dtos.RaceCreator;
 
 namespace OnlineStrategyGame.Dtos
 {
@@ -9,11 +9,15 @@ namespace OnlineStrategyGame.Dtos
     {
         public AutoMapping()
         {
+            CreateMap<Buildings, BuildingsDto>();
+            CreateMap<Moon, MoonDto>();
+            CreateMap<Planet, PlanetDto>();
+            CreateMap<RaceBonuses, RaceBonusesDto>();
+            CreateMap<Resources, ResourcesDto>();
             CreateMap<SolarSystem, SolarSystemDto>();
             CreateMap<Star, StarDto>();
-            CreateMap<Planet, PlanetDto>();
-            CreateMap<Moon, MoonDto>();
-            CreateMap<Resources, ResourcesDto>();
+            CreateMap<Technology, TechnologyDto>();
+            CreateMap<Triats, TriatsDto>();
         }
     }
 }
