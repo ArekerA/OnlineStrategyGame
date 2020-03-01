@@ -39,10 +39,5 @@ namespace OnlineStrategyGame.WebApp.Controllers
             var model =  _solarSystemManager.GetSolarSystem(x, y, z);
             return View("Index",model);
         }
-
-        private bool SolarSystemExists(int id)
-        {
-            return _context.SolarSystems.Any(e => e.Id == id);
-        }
     }
 }

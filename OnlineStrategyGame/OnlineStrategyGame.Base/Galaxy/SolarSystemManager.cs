@@ -24,14 +24,19 @@ namespace OnlineStrategyGame.Base.Galaxy
             return GetOrCreateSolarSystemFromDatabase(cordX, cordY, cordZ);
         }
 
-        private bool CheckIsSolarSystemExist(int cordX, int cordY, int cordZ)
+        private bool CheckIfSolarSystemExist(int cordX, int cordY, int cordZ)
         {
-            return true;
+            return GalaxyProceduralGenerator.CheckIfSolarSystemExist(cordX, cordY, cordZ);
+        }
+        public bool CheckIfSolarSystemExist(int id)
+        {
+
+            return _context.SolarSystems.Any(e => e.Id == id);
         }
 
         private SolarSystemDto GetOrCreateSolarSystemFromDatabase(int cordX, int cordY, int cordZ)
         {
-            if (CheckIsSolarSystemExist(cordX, cordY, cordZ))
+            if (CheckIfSolarSystemExist(cordX, cordY, cordZ))
             {
                 var solarSystem = _context.SolarSystems
                     .Include(a => a.Star)
