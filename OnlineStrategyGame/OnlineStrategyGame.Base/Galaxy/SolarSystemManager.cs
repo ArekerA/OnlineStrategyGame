@@ -13,6 +13,7 @@ namespace OnlineStrategyGame.Base.Galaxy
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+
         public SolarSystemManager(ApplicationDbContext context, IMapper mapper)
         {
             _mapper = mapper;
@@ -28,9 +29,9 @@ namespace OnlineStrategyGame.Base.Galaxy
         {
             return GalaxyProceduralGenerator.CheckIfSolarSystemExist(cordX, cordY, cordZ);
         }
+
         public bool CheckIfSolarSystemExist(int id)
         {
-
             return _context.SolarSystems.Any(e => e.Id == id);
         }
 
@@ -44,73 +45,20 @@ namespace OnlineStrategyGame.Base.Galaxy
                     .FirstOrDefault(a => a.CordX == cordX && a.CordY == cordY && a.CordZ == cordZ);
                 if (solarSystem == null)
                 {
-                    var star = new Star
-                    {
-                        GravitationalAcceleration = 1,
-                        Mass = 100,
-                        Radius = 10,
-                        Temperature = 100
-                    };
-                    var moonResources = new Resources
-                    {
-                        Aluminium = 10,
-                        AluminiumAlloy = 5,
-                        Antimatter = 1,
-                        Carbon = 15,
-                        Food = 10,
-                        Graphene = 5,
-                        Helium3 = 1,
-                        Hydrogen = 10,
-                        Titanium = 1,
-                        TitaniumAlloy = 1,
-                        Uranium = 1
-                    };
-                    var moon = new Moon
-                    {
-                        Resources = moonResources,
-                        Population = 0,
-                    };
-                    var planetResources = new Resources
-                    {
-                        Aluminium = 10,
-                        AluminiumAlloy = 5,
-                        Antimatter = 1,
-                        Carbon = 15,
-                        Food = 10,
-                        Graphene = 5,
-                        Helium3 = 1,
-                        Hydrogen = 10,
-                        Titanium = 1,
-                        TitaniumAlloy = 1,
-                        Uranium = 1
-                    };
-                    var planet = new Planet
-                    {
-                        GravitationalAcceleration = 1,
-                        Mass = 100,
-                        Radius = 10,
-                        DistanceToStar = 10,
-                        MaxTemperature = 10,
-                        MinTemperature = 0,
-                        Resources = planetResources,
-                        Moons = new List<Moon>(){ moon },
-                        Population = 1_000_000
-                    };
-                    solarSystem = new SolarSystem
-                    {
-                        CordX = cordX,
-                        CordY = cordY,
-                        CordZ = cordZ,
-                        Star = star,
-                        Planets = new List<Planet>() { planet }
-
-                    };
-                    _context.SolarSystems.Add(solarSystem);
-                    _context.SaveChanges();
+                    return CreateNewSolarSystem(cordX, cordY, cordZ);
                 }
-                return _mapper.Map<SolarSystemDto>(solarSystem); ;
+                return _mapper.Map<SolarSystemDto>(solarSystem);
             }
             return null;
+        }
+
+        private SolarSystemDto CreateNewSolarSystem(int cordX, int cordY, int cordZ)
+        {
+            var solarSystemDto = GalaxyProceduralGenerator.CreateSolarSystem(cordX, cordY, cordZ);
+            var solarSystem = _mapper.Map<SolarSystem>(solarSystemDto);
+            _context.SolarSystems.Add(solarSystem);
+            _context.SaveChanges();
+            return _mapper.Map<SolarSystemDto>(solarSystem);//Double map because all ids are needed 
         }
     }
 }

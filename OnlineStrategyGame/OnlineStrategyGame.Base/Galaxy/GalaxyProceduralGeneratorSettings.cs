@@ -32,18 +32,24 @@ namespace OnlineStrategyGame.Base.Galaxy
         public int MaxY { get; private set; }
         public int MinZ { get; private set; }
         public int MaxZ { get; private set; }
-        public int ChanceToSolarSystemExist { get; set; }
+        public int ChanceToSolarSystemExist { get; private set; }
+        public double StarMassMinimum { get; private set; }
+        public double StarMassMaximum { get; private set; }
+        public double StarRadiusMinimum { get; private set; }
+        public double StarRadiusMaximum { get; private set; }
+        public double StarTemperatureMinimum { get; private set; }
+        public double StarTemperatureMaximum { get; private set; }
         private GalaxyProceduralGeneratorSettings()
         {
 
         }
-        public static ISetMinX Init()
+        public static ISeed Init()
         {
             var settings = new GalaxyProceduralGeneratorSettings();
             return new GalaxyProceduralGeneratorSettingsFluentBuilder(settings);
         }
 
-        public class GalaxyProceduralGeneratorSettingsFluentBuilder : ISetMinX, ISetMaxX, ISetMinY, ISetMaxY, ISetMinZ, ISetMaxZ, IChanceToSolarSystemExist, ICreate
+        public class GalaxyProceduralGeneratorSettingsFluentBuilder : ISeed, ISetMinX, ISetMaxX, ISetMinY, ISetMaxY, ISetMinZ, ISetMaxZ, IChanceToSolarSystemExist, ICreate, ISetStarMass, ISetStarRadius, ISetStarTemperature
         {
             private readonly GalaxyProceduralGeneratorSettings settings;
             public GalaxyProceduralGeneratorSettingsFluentBuilder(GalaxyProceduralGeneratorSettings settings)
@@ -51,7 +57,7 @@ namespace OnlineStrategyGame.Base.Galaxy
                 this.settings = settings;
             }
 
-            public ICreate ChanceToSolarSystemExist(int chanceToSolarSystemExist)
+            public ISetStarMass ChanceToSolarSystemExist(int chanceToSolarSystemExist)
             {
                 settings.ChanceToSolarSystemExist = chanceToSolarSystemExist;
                 return this;
@@ -60,6 +66,12 @@ namespace OnlineStrategyGame.Base.Galaxy
             public GalaxyProceduralGeneratorSettings Create()
             {
                 return settings;
+            }
+
+            public ISetMinX Seed(int seed)
+            {
+                settings.Seed = seed;
+                return this;
             }
 
             public ISetMinY SetMaxX(int maxX)
@@ -103,11 +115,36 @@ namespace OnlineStrategyGame.Base.Galaxy
                 settings.Seed = seed;
                 return this;
             }
+
+            public ISetStarRadius SetStarMass(double min, double max)
+            {
+                settings.StarMassMinimum = min;
+                settings.StarMassMaximum = max;
+                return this;
+            }
+
+            public ISetStarTemperature SetStarRadius(double min, double max)
+            {
+                settings.StarRadiusMinimum = min;
+                settings.StarRadiusMaximum = max;
+                return this;
+            }
+
+            public ICreate SetStarTemperature(double min, double max)
+            {
+                settings.StarTemperatureMinimum = min;
+                settings.StarTemperatureMaximum = max;
+                return this;
+            }
         }
 
     }
     namespace Fluent
     {
+        public interface ISeed
+        {
+            ISetMinX Seed(int seed);
+        }
         public interface ISetMinX
         {
             ISetMaxX SetMinX(int minX);
@@ -134,7 +171,19 @@ namespace OnlineStrategyGame.Base.Galaxy
         }
         public interface IChanceToSolarSystemExist
         {
-            ICreate ChanceToSolarSystemExist(int chanceToSolarSystemExist);
+            ISetStarMass ChanceToSolarSystemExist(int chanceToSolarSystemExist);
+        }
+        public interface ISetStarMass
+        {
+            ISetStarRadius SetStarMass(double min, double max);
+        }
+        public interface ISetStarRadius
+        {
+            ISetStarTemperature SetStarRadius(double min, double max);
+        }
+        public interface ISetStarTemperature
+        {
+            ICreate SetStarTemperature(double min, double max);
         }
         public interface ICreate
         {
