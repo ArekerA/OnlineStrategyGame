@@ -9,12 +9,9 @@ namespace OnlineStrategyGame.Dtos.Galaxy
     {
         public int Id { get; set; }
 
-        public AppIdentityUser Ruler { get; set; }
-        public string RulerId { get; set; }
         public StarDto Star { get; set; }
         public int StarId { get; set; }
         public List<PlanetDto> Planets { get; set; }
-        public int SolarSystemId { get; set; }
         public int CordX { get; set; }
         public int CordY { get; set; }
         public int CordZ { get; set; }

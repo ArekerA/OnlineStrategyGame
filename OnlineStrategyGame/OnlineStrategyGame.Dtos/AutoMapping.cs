@@ -18,6 +18,17 @@ namespace OnlineStrategyGame.Dtos
             CreateMap<Star, StarDto>();
             CreateMap<Technology, TechnologyDto>();
             CreateMap<Triats, TriatsDto>();
+
+
+            CreateMap<BuildingsDto, Buildings>();
+            CreateMap<MoonDto, Moon>();
+            CreateMap<PlanetDto, Planet>();
+            CreateMap<RaceBonusesDto, RaceBonuses>();
+            CreateMap<ResourcesDto, Resources>();
+            CreateMap<SolarSystemDto, SolarSystem>();
+            CreateMap<StarDto, Star>();
+            CreateMap<TechnologyDto, Technology>();
+            CreateMap<TriatsDto, Triats>();
         }
     }
 }

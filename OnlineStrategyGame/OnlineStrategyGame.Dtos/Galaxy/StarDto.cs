@@ -9,10 +9,9 @@ namespace OnlineStrategyGame.Dtos.Galaxy
     {
         public int Id { get; set; }
 
-        public float Mass { get; set; }
-        public float Radius { get; set; }
-        public float GravitationalAcceleration { get; set; }
-        public float Temperature { get; set; }
+        public double Mass { get; set; }
+        public double Radius { get; set; }
+        public double Temperature { get; set; }
         public SolarSystemDto SolarSystem { get; set; }
     }
 }
