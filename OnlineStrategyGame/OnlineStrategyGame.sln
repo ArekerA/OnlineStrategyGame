@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStrategyGame.Localisa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStrategyGame.Dtos", "OnlineStrategyGame.Dtos\OnlineStrategyGame.Dtos.csproj", "{057B37C6-5131-4563-BA49-90032A01302A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStrategyGame.Base", "OnlineStrategyGame.Base\OnlineStrategyGame.Base.csproj", "{A8A5E4B9-D6B7-495E-AA13-8345604706B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStrategyGame.Base", "OnlineStrategyGame.Base\OnlineStrategyGame.Base.csproj", "{A8A5E4B9-D6B7-495E-AA13-8345604706B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStrategyGame.Base.Tests", "OnlineStrategyGame.Base.Tests\OnlineStrategyGame.Base.Tests.csproj", "{992862F8-A124-410A-8E4B-79E3DD2A6F75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{A8A5E4B9-D6B7-495E-AA13-8345604706B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8A5E4B9-D6B7-495E-AA13-8345604706B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8A5E4B9-D6B7-495E-AA13-8345604706B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992862F8-A124-410A-8E4B-79E3DD2A6F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992862F8-A124-410A-8E4B-79E3DD2A6F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992862F8-A124-410A-8E4B-79E3DD2A6F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992862F8-A124-410A-8E4B-79E3DD2A6F75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using OnlineStrategyGame.Dtos.Galaxy;
 using System;
+using Calculate = OnlineStrategyGame.Base.Galaxy.GalaxyProceduralGeneratorCalculateMethods;
 
 namespace OnlineStrategyGame.Base.Galaxy
 {
@@ -24,7 +25,7 @@ namespace OnlineStrategyGame.Base.Galaxy
 
         public static bool CheckIfSolarSystemExist(int x, int y, int z)
         {
-            var rand = new Random(CalculateProceruralSeed(x, y, z));
+            var rand = new Random(Calculate.CalculateProceruralSeed(Settings, x, y, z));
             var value = rand.Next() % _modulo;
             if (value > _modulo - Settings.ChanceToSolarSystemExist)
                 return true;
@@ -79,19 +80,13 @@ namespace OnlineStrategyGame.Base.Galaxy
             var mass = Settings.StarMassMinimum + (value * _modulo * 10) / (Settings.StarMassMaximum - Settings.StarMassMinimum);
             value = rand.Next() % (_modulo * 10);
             var radius = Settings.StarRadiusMinimum + (value * _modulo * 10) / (Settings.StarRadiusMaximum - Settings.StarRadiusMinimum);
-            var temp = Settings.StarTemperatureMaximum - ((mass - Settings.StarMassMinimum) * (radius - Settings.StarRadiusMinimum) * (1 / (Settings.StarTemperatureMaximum - Settings.StarTemperatureMinimum)));
             var star = new StarDto
             {
                 Mass = mass,
                 Radius = radius,
-                Temperature = temp
+                Temperature = Calculate.CalculateStarTemeperature(Settings, mass, radius)
             };
             return star;
-        }
-
-        private static int CalculateProceruralSeed(int x, int y, int z)
-        {
-            return (z + y * Settings.ZWidth + x * Settings.ZWidth * Settings.YWidth) * Settings.Seed;
         }
     }
 }
