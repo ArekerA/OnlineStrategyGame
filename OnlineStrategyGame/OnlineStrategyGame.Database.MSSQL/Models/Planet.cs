@@ -15,12 +15,12 @@ namespace OnlineStrategyGame.Database.MSSQL.Models
         public AppIdentityUser Ruler { get; set; }
         public string RulerId { get; set; }
 
-        public float Mass { get; set; }
-        public float Radius { get; set; }
-        public float GravitationalAcceleration { get; set; }
-        public float MaxTemperature { get; set; }
-        public float MinTemperature { get; set; }
-        public float DistanceToStar { get; set; }
+        public double Mass { get; set; }
+        public double Radius { get; set; }
+        public double GravitationalAcceleration { get; set; }
+        public double MaxTemperature { get; set; }
+        public double MinTemperature { get; set; }
+        public double DistanceToStar { get; set; }
         public SolarSystem SolarSystem { get; set; }
         public int SolarSystemId { get; set; }
         public Resources Resources { get; set; }

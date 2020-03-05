@@ -11,16 +11,18 @@ namespace OnlineStrategyGame.Dtos.Galaxy
         public int Id { get; set; }
 
         public string Name { get; set; }
-        public float Mass { get; set; }
-        public float Radius { get; set; }
-        public float GravitationalAcceleration { get; set; }
-        public float MaxTemperature { get; set; }
-        public float MinTemperature { get; set; }
-        public float DistanceToStar { get; set; }
+        public double Mass { get; set; }
+        public double Radius { get; set; }
+        public double GravitationalAcceleration { get; set; }
+        public double MaxTemperature { get; set; }
+        public double MinTemperature { get; set; }
+        public double DistanceToStar { get; set; }
         public SolarSystemDto SolarSystem { get; set; }
         public int SolarSystemId { get; set; }
         public ResourcesDto Resources { get; set; }
         public List<MoonDto> Moons { get; set; }
+        public BuildingsDto Buildings { get; set; }
+        public TriatsDto Triats { get; set; }
         public int Population { get; set; }
     }
 }
