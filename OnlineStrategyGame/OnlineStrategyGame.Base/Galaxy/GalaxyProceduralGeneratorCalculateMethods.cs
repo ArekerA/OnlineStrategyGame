@@ -6,6 +6,7 @@ namespace OnlineStrategyGame.Base.Galaxy
 {
     public static class GalaxyProceduralGeneratorCalculateMethods
     {
+        private const float _planetTemperatureMultipler = .1f;
         public static double CalculateStarTemeperature(GalaxyProceduralGeneratorSettings settings, double mass, double radius)
         {
             mass -= settings.StarMassMinimum;
@@ -21,6 +22,19 @@ namespace OnlineStrategyGame.Base.Galaxy
         public static int CalculateProceruralSeed(GalaxyProceduralGeneratorSettings settings, int x, int y, int z)
         {
             return (z + y * settings.ZWidth + x * settings.ZWidth * settings.YWidth) * settings.Seed;
+        }
+
+        internal static double CalculatePlanetTemperatureMinimum(GalaxyProceduralGeneratorSettings settings, double distanceToStar, double mass, double starTemperature)
+        {
+            //TODO
+            throw new NotImplementedException();
+        }
+
+        internal static double CalculatePlanetTepmeratureMaximum(GalaxyProceduralGeneratorSettings settings, double distanceToStar, double mass, double starTemperature)
+        {
+            //TODO
+            var distanceNormalized = (distanceToStar - settings.PlanetDistanceToStarMinimum)/ (settings.PlanetDistanceToStarMaximum - settings.PlanetDistanceToStarMinimum);
+            throw new NotImplementedException();
         }
     }
 }
