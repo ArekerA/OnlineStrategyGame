@@ -32,6 +32,9 @@ namespace OnlineStrategyGame.Base.Galaxy
             .SetPlanetHightVolcanicActivityChance(100)
             .SetPlanetHotTreshold(340)
             .SetPlanetColdTreshold(230)
+            .SetMoonNumberMinimum(0)
+            .SetMoonNumberMaximum(3)
+            .SetMoonStrongRadiationChance(100)
             .Create();
 
         public static bool CheckIfSolarSystemExist(int x, int y, int z)
@@ -168,7 +171,37 @@ namespace OnlineStrategyGame.Base.Galaxy
 
         private static List<MoonDto> CreateMoons(int value)
         {
-            throw new NotImplementedException();
+            var result = new List<MoonDto>();
+            var numberOfMoons = Settings.MoonNumberMinimum + value % (Settings.MoonNumberMaximum - Settings.MoonNumberMinimum);
+            for (int i = 0; i < numberOfMoons; i++)
+            {
+                var moon = new MoonDto
+                {
+                    Buildings = new BuildingsDto(),
+                    Population = 0,
+                    Resources = new ResourcesDto()
+                };
+                moon.Triats = GenerateTriatsForMoon(moon, value);
+                result.Add(moon);
+            }
+            return result;
+        }
+
+        private static TriatsDto GenerateTriatsForMoon(MoonDto moon, int value)
+        {
+            var rand = new Random(value * Settings.Seed);
+            var triats = new TriatsDto();
+            triats.Rocky = true;
+            triats.NoAtmosphere = true;
+            triats.Cold = true;
+
+            var number = rand.Next() % _modulo;
+            if (number < Settings.MoonStrongRadiationChance)
+            {
+                triats.StrongRadiation = true;
+            }
+
+            return triats;
         }
     }
 }

@@ -55,6 +55,9 @@ namespace OnlineStrategyGame.Base.Galaxy
         public double PlanetHightVolcanicActivityChance { get; private set; }
         public double PlanetHotTreshold { get; private set; }
         public double PlanetColdTreshold { get; private set; }
+        public int MoonNumberMinimum { get; private set; }
+        public int MoonNumberMaximum { get; private set; }
+        public double MoonStrongRadiationChance { get; set; }
         private GalaxyProceduralGeneratorSettings()
         {
 
@@ -68,7 +71,8 @@ namespace OnlineStrategyGame.Base.Galaxy
         public class GalaxyProceduralGeneratorSettingsFluentBuilder : ISeed, ISetMinX, ISetMaxX, ISetMinY, ISetMaxY, ISetMinZ, ISetMaxZ, IChanceToSolarSystemExist, ICreate, 
             ISetStarMass, ISetStarRadius, ISetStarTemperature, 
             ISetPlanetNumber, ISetPlanetMass, ISetPlanetRadius, ISetPlanetTemperature, ISetPlanetDistanceToStar,
-            IPlanetFriendlyAtmosphereChance, IPlanetToxicAtmosphereChance, IPlanetStrongRadiationChance, IPlanetHightVolcanicActivityChance, IPlanetHotTreshold, IPlanetColdTreshold
+            IPlanetFriendlyAtmosphereChance, IPlanetToxicAtmosphereChance, IPlanetStrongRadiationChance, IPlanetHightVolcanicActivityChance, IPlanetHotTreshold, IPlanetColdTreshold,
+            IMoonNumberMinimum, IMoonNumberMaximum, IMoonStrongRadiationChance
         {
             private readonly GalaxyProceduralGeneratorSettings settings;
             public GalaxyProceduralGeneratorSettingsFluentBuilder(GalaxyProceduralGeneratorSettings settings)
@@ -129,7 +133,25 @@ namespace OnlineStrategyGame.Base.Galaxy
                 return this;
             }
 
-            public ICreate SetPlanetColdTreshold(double value)
+            public IMoonStrongRadiationChance SetMoonNumberMaximum(int value)
+            {
+                settings.MoonNumberMaximum = value;
+                return this;
+            }
+
+            public IMoonNumberMaximum SetMoonNumberMinimum(int value)
+            {
+                settings.MoonNumberMinimum = value;
+                return this;
+            }
+
+            public ICreate SetMoonStrongRadiationChance(double value)
+            {
+                settings.MoonStrongRadiationChance = value;
+                return this;
+            }
+
+            public IMoonNumberMinimum SetPlanetColdTreshold(double value)
             {
                 settings.PlanetColdTreshold = value;
                 return this;
@@ -317,7 +339,19 @@ namespace OnlineStrategyGame.Base.Galaxy
         }
         public interface IPlanetColdTreshold
         {
-            ICreate SetPlanetColdTreshold(double value);
+            IMoonNumberMinimum SetPlanetColdTreshold(double value);
+        }
+        public interface IMoonNumberMinimum
+        {
+            IMoonNumberMaximum SetMoonNumberMinimum(int value);
+        }
+        public interface IMoonNumberMaximum
+        {
+            IMoonStrongRadiationChance SetMoonNumberMaximum(int value);
+        }
+        public interface IMoonStrongRadiationChance
+        {
+            ICreate SetMoonStrongRadiationChance(double value);
         }
         public interface ICreate
         {
