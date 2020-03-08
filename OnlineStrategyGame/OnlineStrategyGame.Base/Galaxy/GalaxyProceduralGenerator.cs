@@ -8,7 +8,6 @@ namespace OnlineStrategyGame.Base.Galaxy
     public static class GalaxyProceduralGenerator
     {
         private const int _modulo = 1000;
-        private const double _gravitationalConstant = 6.67430e-2;//m^3 to km^3
         public static GalaxyProceduralGeneratorSettings Settings { get; set; }
             = GalaxyProceduralGeneratorSettings.Init()
             .Seed(123456789)
@@ -27,6 +26,12 @@ namespace OnlineStrategyGame.Base.Galaxy
             .SetPlanetRadius(2257.812, 209733)//km
             .SetPlanetTemperature(50,7000)//K
             .SetPlanetDistanceToStar(3.141e5, 1.032e9)//km
+            .SetPlanetFriendlyAtmosphereChance(200)
+            .SetPlanetToxicAtmosphereChance(200)
+            .SetPlanetStrongRadiationChance(100)
+            .SetPlanetHightVolcanicActivityChance(100)
+            .SetPlanetHotTreshold(340)
+            .SetPlanetColdTreshold(230)
             .Create();
 
         public static bool CheckIfSolarSystemExist(int x, int y, int z)
@@ -86,24 +91,74 @@ namespace OnlineStrategyGame.Base.Galaxy
                     Mass = mass,
                     Radius = radius,
                     DistanceToStar = distanceToStar,
-                    MinTemperature = Calculate.CalculatePlanetTemperatureMinimum(Settings, distanceToStar, mass, starTemperature),
-                    MaxTemperature = Calculate.CalculatePlanetTepmeratureMaximum(Settings, distanceToStar, mass, starTemperature),
-                    GravitationalAcceleration = _gravitationalConstant * mass / (radius * radius),
+                    MinTemperature = Calculate.CalculatePlanetTemperatureMinimum(Settings, mass, distanceToStar, starTemperature),
+                    MaxTemperature = Calculate.CalculatePlanetTepmeratureMaximum(Settings, distanceToStar, starTemperature),
+                    GravitationalAcceleration = Calculate.CalculatePlanetGravitationalAcceleration(mass, radius),
                     Moons = CreateMoons(value),
                     Name = GeneratePlanetName(),
                     Population = 0,
                     Resources = new ResourcesDto(),
-                    Buildings = new BuildingsDto(),
-                    Triats = GenerateTriatsForPlanet()
+                    Buildings = new BuildingsDto()
                 };
+                planet.Triats = GenerateTriatsForPlanet(planet, value);
                 result.Add(planet);
             }
             return result;
         }
 
-        private static TriatsDto GenerateTriatsForPlanet()
+        private static TriatsDto GenerateTriatsForPlanet(PlanetDto planet, int value)
         {
-            throw new NotImplementedException();
+            var rand = new Random(value * Settings.Seed);
+            var triats = new TriatsDto();
+            triats.Rocky = true;
+            if (Calculate.CalculateIsPlanetGasGiant(planet.Mass, planet.Radius))
+            {
+                triats.GasGiant = true;
+                triats.Rocky = false;
+            }
+            else if (Calculate.CalculateIsPlanetHasDenseAtmosphere(Settings, planet.Mass, planet.MaxTemperature))
+            {
+                triats.DenseAtmosphere = true;
+            }
+            else if (!Calculate.CalculateIsPlanetHasAtmosphere(Settings, planet.Mass, planet.MaxTemperature))
+            {
+                triats.NoAtmosphere = true;
+            }
+
+            var number = rand.Next() % _modulo;
+            if (triats.Rocky && !triats.NoAtmosphere && number < Settings.PlanetFriendlyAtmosphereChance)
+            {
+                triats.FriendlyAtmosphere = true;
+            }
+
+            number = rand.Next() % _modulo;
+            if (triats.Rocky && !triats.NoAtmosphere && number < Settings.PlanetToxicAtmosphereChance)
+            {
+                triats.ToxicAtmosphere = true;
+            }
+
+            number = rand.Next() % _modulo;
+            if (number < Settings.PlanetStrongRadiationChance)
+            {
+                triats.StrongRadiation = true;
+            }
+
+            number = rand.Next() % _modulo;
+            if (triats.Rocky && number < Settings.PlanetHightVolcanicActivityChance)
+            {
+                triats.HightVolcanicActivity = true;
+            }
+            
+            if((planet.MinTemperature+planet.MaxTemperature)/2 > Settings.PlanetHotTreshold)
+            {
+                triats.Hot = true;
+            }
+            else if ((planet.MinTemperature + planet.MaxTemperature) / 2 < Settings.PlanetColdTreshold)
+            {
+                triats.Cold = true;
+            }
+
+            return triats;
         }
 
         private static string GeneratePlanetName()

@@ -49,6 +49,12 @@ namespace OnlineStrategyGame.Base.Galaxy
         public double PlanetTemperatureMaximum { get; private set; }
         public double PlanetDistanceToStarMinimum { get; private set; }
         public double PlanetDistanceToStarMaximum { get; private set; }
+        public double PlanetFriendlyAtmosphereChance { get; private set; }
+        public double PlanetToxicAtmosphereChance { get; private set; }
+        public double PlanetStrongRadiationChance { get; private set; }
+        public double PlanetHightVolcanicActivityChance { get; private set; }
+        public double PlanetHotTreshold { get; private set; }
+        public double PlanetColdTreshold { get; private set; }
         private GalaxyProceduralGeneratorSettings()
         {
 
@@ -61,7 +67,8 @@ namespace OnlineStrategyGame.Base.Galaxy
 
         public class GalaxyProceduralGeneratorSettingsFluentBuilder : ISeed, ISetMinX, ISetMaxX, ISetMinY, ISetMaxY, ISetMinZ, ISetMaxZ, IChanceToSolarSystemExist, ICreate, 
             ISetStarMass, ISetStarRadius, ISetStarTemperature, 
-            ISetPlanetNumber, ISetPlanetMass, ISetPlanetRadius, ISetPlanetTemperature, ISetPlanetDistanceToStar
+            ISetPlanetNumber, ISetPlanetMass, ISetPlanetRadius, ISetPlanetTemperature, ISetPlanetDistanceToStar,
+            IPlanetFriendlyAtmosphereChance, IPlanetToxicAtmosphereChance, IPlanetStrongRadiationChance, IPlanetHightVolcanicActivityChance, IPlanetHotTreshold, IPlanetColdTreshold
         {
             private readonly GalaxyProceduralGeneratorSettings settings;
             public GalaxyProceduralGeneratorSettingsFluentBuilder(GalaxyProceduralGeneratorSettings settings)
@@ -122,10 +129,34 @@ namespace OnlineStrategyGame.Base.Galaxy
                 return this;
             }
 
-            public ICreate SetPlanetDistanceToStar(double min, double max)
+            public ICreate SetPlanetColdTreshold(double value)
+            {
+                settings.PlanetColdTreshold = value;
+                return this;
+            }
+
+            public IPlanetFriendlyAtmosphereChance SetPlanetDistanceToStar(double min, double max)
             {
                 settings.PlanetDistanceToStarMinimum = min;
                 settings.PlanetDistanceToStarMaximum = max;
+                return this;
+            }
+
+            public IPlanetToxicAtmosphereChance SetPlanetFriendlyAtmosphereChance(double value)
+            {
+                settings.PlanetFriendlyAtmosphereChance = value;
+                return this;
+            }
+
+            public IPlanetHotTreshold SetPlanetHightVolcanicActivityChance(double value)
+            {
+                settings.PlanetHightVolcanicActivityChance = value;
+                return this;
+            }
+
+            public IPlanetColdTreshold SetPlanetHotTreshold(double value)
+            {
+                settings.PlanetHotTreshold = value;
                 return this;
             }
 
@@ -150,10 +181,22 @@ namespace OnlineStrategyGame.Base.Galaxy
                 return this;
             }
 
+            public IPlanetHightVolcanicActivityChance SetPlanetStrongRadiationChance(double value)
+            {
+                settings.PlanetStrongRadiationChance = value;
+                return this;
+            }
+
             public ISetPlanetDistanceToStar SetPlanetTemperature(double min, double max)
             {
                 settings.PlanetTemperatureMinimum = min;
                 settings.PlanetTemperatureMaximum = max;
+                return this;
+            }
+
+            public IPlanetStrongRadiationChance SetPlanetToxicAtmosphereChance(double value)
+            {
+                settings.PlanetToxicAtmosphereChance = value;
                 return this;
             }
 
@@ -250,7 +293,31 @@ namespace OnlineStrategyGame.Base.Galaxy
         }
         public interface ISetPlanetDistanceToStar
         {
-            ICreate SetPlanetDistanceToStar(double min, double max);
+            IPlanetFriendlyAtmosphereChance SetPlanetDistanceToStar(double min, double max);
+        }
+        public interface IPlanetFriendlyAtmosphereChance
+        {
+            IPlanetToxicAtmosphereChance SetPlanetFriendlyAtmosphereChance(double value);
+        }
+        public interface IPlanetToxicAtmosphereChance
+        {
+            IPlanetStrongRadiationChance SetPlanetToxicAtmosphereChance(double value);
+        }
+        public interface IPlanetStrongRadiationChance
+        {
+            IPlanetHightVolcanicActivityChance SetPlanetStrongRadiationChance(double value);
+        }
+        public interface IPlanetHightVolcanicActivityChance
+        {
+            IPlanetHotTreshold SetPlanetHightVolcanicActivityChance(double value);
+        }
+        public interface IPlanetHotTreshold
+        {
+            IPlanetColdTreshold SetPlanetHotTreshold(double value);
+        }
+        public interface IPlanetColdTreshold
+        {
+            ICreate SetPlanetColdTreshold(double value);
         }
         public interface ICreate
         {

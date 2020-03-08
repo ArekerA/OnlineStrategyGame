@@ -38,5 +38,13 @@ namespace OnlineStrategyGame.Base.Tests
             var exceptedResult = settings.StarTemperatureMinimum + (settings.StarTemperatureMaximum - settings.StarTemperatureMinimum) / 2;
             Assert.AreEqual(exceptedResult, result);
         }
+        [Test]
+        public void CalculateIsPlanetHasDenseAtmosphereTest()
+        {
+            GalaxyProceduralGeneratorCalculateMethods.CalculateIsPlanetHasDenseAtmosphere(settings, 4.867e24, 737);
+            var result = GalaxyProceduralGeneratorCalculateMethods.CalculateStarTemeperature(settings, settings.StarMassMaximum, settings.StarRadiusMaximum);
+            var exceptedResult = settings.StarTemperatureMinimum + (settings.StarTemperatureMaximum - settings.StarTemperatureMinimum) / 2;
+            Assert.AreEqual(exceptedResult, result);
+        }
     }
 }
