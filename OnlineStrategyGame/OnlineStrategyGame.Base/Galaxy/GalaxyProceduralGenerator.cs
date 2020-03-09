@@ -1,4 +1,5 @@
-﻿using OnlineStrategyGame.Dtos.Galaxy;
+﻿using OnlineStrategyGame.Base.Names;
+using OnlineStrategyGame.Dtos.Galaxy;
 using System;
 using System.Collections.Generic;
 using Calculate = OnlineStrategyGame.Base.Galaxy.GalaxyProceduralGeneratorCalculateMethods;
@@ -82,7 +83,6 @@ namespace OnlineStrategyGame.Base.Galaxy
             var result = new List<PlanetDto>();
             var rand = new Random(randomValue * Settings.Seed);
             var value = rand.Next();
-            var valueDouble = rand.NextDouble();
             var numberOfPlanets = Settings.PlanetNumberMinimum + value % (Settings.PlanetNumberMaximum - Settings.PlanetNumberMinimum);
             for (int i = 0; i < numberOfPlanets; i++)
             {
@@ -98,7 +98,7 @@ namespace OnlineStrategyGame.Base.Galaxy
                     MaxTemperature = Calculate.CalculatePlanetTepmeratureMaximum(Settings, distanceToStar, starTemperature),
                     GravitationalAcceleration = Calculate.CalculatePlanetGravitationalAcceleration(mass, radius),
                     Moons = CreateMoons(value),
-                    Name = GeneratePlanetName(),
+                    Name = GeneratePlanetName(randomValue, value),
                     Population = 0,
                     Resources = new ResourcesDto(),
                     Buildings = new BuildingsDto()
@@ -164,9 +164,9 @@ namespace OnlineStrategyGame.Base.Galaxy
             return triats;
         }
 
-        private static string GeneratePlanetName()
+        private static string GeneratePlanetName(int seed, int value)
         {
-            throw new NotImplementedException();
+            return NamesGenerator.GeneratePlanetName(seed, value);
         }
 
         private static List<MoonDto> CreateMoons(int value)
