@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using OnlineStrategyGame.Base.Names;
 using OnlineStrategyGame.Base.Security;
 using OnlineStrategyGame.Database.MSSQL.Models;
 
@@ -49,11 +50,6 @@ namespace OnlineStrategyGame.WebApp.Areas.Identity.Pages.Account
         {
 
             [Required]
-            [DataType(DataType.Text)]
-            [Display(Name = "Full name")]
-            public string Name { get; set; }
-
-            [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -84,7 +80,7 @@ namespace OnlineStrategyGame.WebApp.Areas.Identity.Pages.Account
             {
                 var user = new AppIdentityUser
                 {
-                    Name = Input.Name,
+                    Name = NamesGenerator.GenerateDoubleName((new Random()).Next()),
                     UserName = Input.Email,
                     Email = Input.Email
                 };
