@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using OnlineStrategyGame.Base.Galaxy.Interfaces;
 using OnlineStrategyGame.Base.Names;
 using OnlineStrategyGame.Base.Security;
 using OnlineStrategyGame.Database.MSSQL.Models;
@@ -26,17 +27,20 @@ namespace OnlineStrategyGame.WebApp.Areas.Identity.Pages.Account
         private readonly UserManager<AppIdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly IGalaxyManager _galaxyManager;
 
         public RegisterModel(
             UserManager<AppIdentityUser> userManager,
             SignInManager<AppIdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IGalaxyManager galaxyManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _galaxyManager = galaxyManager;
         }
 
         [BindProperty]
@@ -92,6 +96,7 @@ namespace OnlineStrategyGame.WebApp.Areas.Identity.Pages.Account
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     await _userManager.AddClaimAsync(user, ClaimStaticManager.GetNewPlayerClaim());
+                    
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,

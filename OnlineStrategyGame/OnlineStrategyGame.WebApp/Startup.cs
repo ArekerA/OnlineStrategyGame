@@ -58,6 +58,7 @@ namespace OnlineStrategyGame.WebApp
             services.AddScoped<ISolarSystemManager, SolarSystemManager>();
             services.AddScoped<IRaceCreatorManager, RaceCreatorManager>();
             services.AddScoped<IPlanetManager, PlanetManager>();
+            services.AddScoped<IGalaxyManager, GalaxyManager>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

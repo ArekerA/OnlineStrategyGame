@@ -14,6 +14,8 @@ namespace OnlineStrategyGame.Database.MSSQL
         public DbSet<Triats> Triats { get; set; }
         public DbSet<SolarSystem> SolarSystems { get; set; }
         public DbSet<RaceBonuses> RaceBonuses { get; set; }
+        public DbSet<GalaxySettings> GalaxySettings { get; set; }
+        public object Direction { get; private set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -23,6 +25,13 @@ namespace OnlineStrategyGame.Database.MSSQL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<GalaxySettings>().HasData(new GalaxySettings { 
+                Id = 1, 
+                LastXCordForNewPlayers = 0,
+                LastYCordForNewPlayers = 0,
+                LastZCordForNewPlayers = 0,
+                CordForNewPlayersSearchSecondDirection = 3//Direction.Right
+            });
             modelBuilder.Entity<SolarSystem>()
                 .HasIndex(p => new { p.CordX, p.CordY, p.CordZ });
             modelBuilder.Entity<AppIdentityUser>(
